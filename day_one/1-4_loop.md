@@ -19,7 +19,7 @@ Wildcards and tab completion are two ways to reduce typing (and typing mistakes)
 
 Wildcards and tab completion are two ways to reduce typing (and typing mistakes). Another is to tell the shell to do something over and over again.
 
-Let's go back to our programming-fundamentals/data/articles directory, where we have over 1000 text articles on different regions of the world.
+Let's go back to our unix-fundamentals/data/articles directory, where we have over 1000 text articles on different regions of the world.
 
 Let's say we'd like to make a backup directory called 'backup' and copy our articles in there, renaming each one `original-africa1.txt` and `original-africa2.txt`.
 
@@ -66,8 +66,8 @@ $ for filename in africa1.text africa2.txt
  done
 ~~~
 ~~~ {.output}
- 539 africa1.txt
- 243 africa2.txt
+ 538 africa1.txt
+ 242 africa2.txt
 ~~~
 
 When the shell sees the keyword `for`, it knows it is supposed to repeat a command (or group of commands) once for each thing in a list. In this case, the list is the two filenames.
@@ -77,6 +77,17 @@ When the shell sees the keyword `for`, it knows it is supposed to repeat a comma
 Each time through the loop, the name of the thing currently being operated on is assigned to the **variable** called `filename`. Inside the loop, we get the variable's value by putting `$` in front of it: `$filename` is `africa1.txt` the first time through the loop, `africa2.txt` the second, and so on.
 
 By using the dollar sign we are telling the shell interpreter to treat `filename` as a variable name and substitute its value on its place, but not as some text or external command. When using variables it is also  possible to put the names into curly braces to clearly delimit the variable name: `$filename` is equivalent to `${filename}`, but is different from `${file}name`. You may find this notation in other people's programs.
+
+If you want the result of a command to be stored in a variable name, you can assign it like this:
+
+~~~ {.input}
+VARIABLE=`wc -w africa1.txt`
+echo $VARIABLE
+~~~
+
+~~~ {.output}
+538 africa1.txt
+~~~
 
 Finally, the command that's actually being run is our old friend `wc`,
 so this loop prints out the word count of each data file in turn.
@@ -118,6 +129,7 @@ do
     tail -1 $filename | wc -w
 done
 ~~~
+
 ~~~ {.output}
 ...
 africa97.txt
@@ -153,56 +165,56 @@ done
 because then the first time through the loop, when `$filename` expanded to `africa1.txt`, the shell would try to run `africa1.txt` as a program. Finally, the `tail` and `wc` combination computes the word count of the last line of each file.
 
 > #### Spaces in Names
-> 
-> Filename expansion in loops is another reason you should not use spaces in 
+>
+> Filename expansion in loops is another reason you should not use spaces in
 > filenames. Suppose our data files are named:
-> 
-> ~~~
+>
+ ~~~
 > basilisk.dat
 > red dragon.dat
 > unicorn.dat
-> ~~~
-> 
+ ~~~
+>
 > If we try to process them using:
-> 
-> ~~~
+>
+ ~~~
 > for filename in *.dat
 > do
 >     head -100 $filename | tail -20
 > done
-> ~~~
-> 
+ ~~~
+>
 > then the shell will expand `*.dat` to create:
-> 
-> ~~~
+>
+ ~~~
 > basilisk.dat red dragon.dat unicorn.dat
-> ~~~
-> 
-> With older versions of Bash, or most other shells, `filename` will then be 
+ ~~~
+>
+> With older versions of Bash, or most other shells, `filename` will then be
 > assigned the following values in turn:
-> 
-> ~~~
+>
+ ~~~
 > basilisk.dat
 > red
 > dragon.dat
 > unicorn.dat
-> ~~~
+ ~~~
 >
 > That's a problem: `head` can't read files called `red` and `dragon.dat`
-> because they don't exist, and won't be asked to read the file 
+> because they don't exist, and won't be asked to read the file
 > `red dragon.dat`.
-> 
+>
 > We can make our script a little bit more robust
 > by **quoting** our use of the variable:
-> 
-> ~~~
+>
+ ~~~
 > for filename in *.dat
 > do
 >     head -100 "$filename" | tail -20
 > done
-> ~~~
+ ~~~
 >
-> but it's simpler just to avoid using spaces (or other special characters) in 
+> but it's simpler just to avoid using spaces (or other special characters) in
 > filenames.
 
 ### A Loopy Solution
@@ -229,26 +241,26 @@ mv africa2.txt original-africa2.txt
 ~~~
 
 > #### Measure Twice, Run Once
-> 
+>
 > A loop is a way to do many things at once --- or to make many mistakes at
 > once if it does the wrong thing. One way to check what a loop *would* do
 > is to echo the commands it would run instead of actually running them.
 > For example, we could write our file renaming loop like this:
-> 
-> ~~~
+>
+ ~~~
 > for filename in *.txt
 > do
 >     echo mv $filename original-$filename
 > done
-> ~~~
-> 
+ ~~~
+>
 > Instead of running `mv`, this loop runs `echo`, which prints out:
-> 
-> ~~~
+>
+ ~~~
 > mv africa1.txt original-africa1.txt
 > mv africa2.txt original-africa2.txt
-> ~~~
-> 
+ ~~~
+>
 > *without* actually running those commands. We can then use up-arrow to
 > redisplay the loop, back-arrow to get to the word `echo`, delete it, and
 > then press "enter" to run the loop with the actual `mv` commands. This
