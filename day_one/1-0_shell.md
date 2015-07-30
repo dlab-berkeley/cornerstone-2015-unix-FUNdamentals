@@ -99,12 +99,13 @@ A shell is a program like any other. What's special about it is that its job is 
 
 ### Bash
 
-The most popular Unix shell is **Bash**, the Bourne Again Shell (so-called because it's derived from a shell written by Stephen Bourne --- this is what passes for wit among programmers). Bash is the default shell on most modern implementations of **Unix**, and in most packages that provide Unix-like tools for Windows.
+The most popular Unix shell is **Bash**, the Bourne Again Shell (so-called because it's derived from a shell written by Stephen Bourne --- this is what passes for wit among programmers). Bash is the default shell on most modern implementations of **Unix**, and in most packages that provide Unix-like tools for Windows. Today, we will be using git-bash, a shell that Github ships for Windows users.
+
+Your AIX systems have ksh set as the default shell instead of bash. You will probably not notice any differences for your workflow, with the major exception that ksh does not support tab completion (you'll see this in a little bit).
 
 ### Why Use a Shell
 
-Using Bash or any other shell sometimes feels more like programming than like using a mouse. Commands are terse (often only a couple of characters long),
-their names are frequently cryptic, and their output is lines of text rather than something visual like a graph.
+Using Bash or any other shell sometimes feels more like programming than like using a mouse. Commands are terse (often only a couple of characters long), their names are frequently cryptic, and their output is lines of text rather than something visual like a graph.
 
 On the other hand, the shell allows us to combine existing tools in powerful ways with only a few keystrokes and to set up pipelines to handle large volumes of data automatically.
 
