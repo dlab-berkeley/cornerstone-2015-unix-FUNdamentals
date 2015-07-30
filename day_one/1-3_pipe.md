@@ -295,6 +295,12 @@ bear
 
 Process this list such that there is only one value for each animal, and save it in a file under my_files/ called "unique_animals.txt"
 
+When you feel you have met these challenges successfully, cd into test/ and type
+
+~~~ {.input}
+. 1-3_test.sh
+~~~
+
 ---
 
 Adapted from: [Software Carpentry](http://software-carpentry.org/v5/novice/shell/03-pipefilter.html)
