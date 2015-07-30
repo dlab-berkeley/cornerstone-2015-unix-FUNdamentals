@@ -80,22 +80,21 @@ Going back even further, the only way to interact with early computers was to re
 
 ### The Command Line
 
-This kind of interface is called a **command-line interface**, or CLI,
-to distinguish it from the **graphical user interface**, or GUI, that most people now use.
+This kind of interface is called a **command-line interface**, or CLI, to distinguish it from the **graphical user interface**, or GUI, that most people now use.
 
-The heart of a CLI is a **read-evaluate-print loop**, or REPL: when the user types a command and then presses the enter (or return) key, the computer reads it, executes it, and prints its output. The user then types another command,
-and so on until the user logs off.
+The heart of a CLI is a **read-evaluate-print loop**, or REPL: when the user types a command and then presses the enter (or return) key, the computer reads it, executes it, and prints its output. The user then types another command, and so on until the user logs off.
 
 ### The Shell
 
-This description makes it sound as though the user sends commands directly to the computer, and the computer sends output directly to the user. In fact,
-there is usually a program in between called a **command shell**.
+This description makes it sound as though the user sends commands directly to the computer, and the computer sends output directly to the user. In fact, there is usually a program in between called a **command shell**.
 
 What the user types goes into the shell; it figures out what commands to run and orders the computer to execute them.
 
 Note, the reason why the shell is called *the shell*: it encloses the operating system in order to hide some of its complexity and make it simpler to interact with.
 
 A shell is a program like any other. What's special about it is that its job is to run other programs rather than to do calculations itself. The commands are themselves programs: when they terminate, the shell gives the user another prompt ($ on our systems).
+
+It is important to understand that, as far as the **read-evaluate-print loop** is concerned, there is really no difference between you typing commands into the shell's prompt, and the shell reading commands from a file. We'll do both of these things today.
 
 ### Bash
 
