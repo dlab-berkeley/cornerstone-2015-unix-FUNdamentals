@@ -14,7 +14,7 @@ This is not a computer:
 
 This is a computer:
 
-![A computer](https://commons.wikimedia.org/wiki/Category:ATX_computer_motherboards#/media/File:A790GXH-128M-Motherboard.jpg)
+![A computer](https://upload.wikimedia.org/wikipedia/commons/0/0c/A790GXH-128M-Motherboard.jpg)
 
 Think about the many ways you have to interact with computers - things like:
 
