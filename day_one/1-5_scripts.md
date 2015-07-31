@@ -227,23 +227,9 @@ This style of work allows people to recycle what they discover about their data 
 
 #### Challenge 1
 
-Leah has several hundred data files, each of which is formatted like this:
-
-~~~
-2013-11-05,deer,5
-2013-11-05,rabbit,22
-2013-11-05,raccoon,7
-2013-11-06,rabbit,19
-2013-11-06,deer,2
-2013-11-06,fox,1
-2013-11-07,rabbit,18
-2013-11-07,bear,1
-~~~
-
-Write a shell script called `species.sh` that takes any number of
-filenames as command-line parameters, and uses `cut`, `sort`, and
-`uniq` to print a list of the unique species appearing in each of
-those files separately.
+We've been using bash to print a lot of things to the screen. Write an R script
+that prints the count number of each kind of animal in data/animals.txt,
+and save it in my_files/script.R.
 
 #### Challenge 2
 
@@ -253,26 +239,13 @@ out the name of the file with the most lines in that directory
 with that extension. For example:
 
 ~~~
-$ bash longest.sh /tmp/data pdb
+$ bash my_files/longest.sh /tmp/data pdb
 ~~~
 
 would print the name of the `.pdb` file in `/tmp/data` that has
 the most lines.
 
 #### Challenge 3
-
-If you run the command:
-
-~~~
-history | tail -5 recent.sh
-~~~
-
-the last command in the file is the `history` command itself, i.e.,
-the shell has added `history` to the command log before actually
-running it. In fact, the shell *always* adds commands to the log
-before running them. Why do you think it does this?
-
-#### Challenge 4
 
 Joel's `data` directory contains three files: `fructose.dat`,
 `glucose.dat`, and `sucrose.dat`. Explain what a script called
@@ -296,6 +269,10 @@ done
 # Script 3
 echo $@.dat
 ~~~
+
+#### Challenge 4
+
+What happens if you rename `example.sh` to `example.R`?
 
 ---
 
