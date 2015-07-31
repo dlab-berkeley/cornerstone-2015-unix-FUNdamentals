@@ -31,13 +31,13 @@ cat africa*.txt | wc -l
 
 This is a variation on command we created earlier: It concatenates all of the africa files into one large text files containing all africa articles.
 
-Remember, we are *not* running it as a command just yet: we are putting the commands in a file. 
+Remember, we are *not* running it as a command just yet: we are putting the commands in a file.
 
 ### Running a script
 
-Once we have saved the file, we can ask the shell to execute the commands it contains. 
+Once we have saved the file, we can ask the shell to execute the commands it contains.
 
-First we have to tell the shell what program the script is in. If we want to run a Python script, we would enter in `python` first. If R, then `r` and so on.
+First we have to tell the shell what program the script is in. If we want to run a Python script, we would enter in `python` first. If R, then `R` and so on.
 
 Our shell is called `bash`, so we run the following command:
 
@@ -62,6 +62,33 @@ Sure enough, our script's output is exactly what we would get if we ran that pip
 > keyboard. When editing programs, therefore, you must either use a plain
 > text editor, or be careful to save files as plain text.
 
+### Files as programs
+
+As we said earlier, the shell is one of many ways you can interact with a computer. Calling `bash` on a `.sh` file is not inherently any different than calling `R` on a `.R` file (**and neither of these is inherently any different than you typing commands into the shell or R interpreter**). To demonstrate this point, we are going to take a short detour in file creation.
+
+Suppose you want to create a program that tells you where you are. In bash, you can this:
+
+~~~ {.input}
+echo "pwd;" > my_files/script.sh
+bash my_files/script.sh
+~~~
+~~~ {.output}
+/home/rochelle/unix-fundamentals
+~~~
+
+But what if you want to do it in R? The process is nearly identical:
+
+~~~ {.input}
+echo "getwd()" > my_files/script.R
+R --silent -f my_files/script.R
+~~~
+~~~ {.output}
+[1] /home/rochelle/unix-fundamentals
+~~~
+
+> R takes different flags than bash does. Here we are telling it to read from the
+> file that follows `-f`, and to run without opening the interpreter with `--silent`
+
 ### Variables in Scripts
 
 What if we want concatenate an arbitrary group of files? We could edit `group.sh` each time to change the filename, but that would probably take longer than just retyping the command.
@@ -78,7 +105,7 @@ cat "$@" | wc -l
 Inside a shell script, `$1` means "the first filename (or other parameter) on the command line". `$2` means the second and so on. But in this case, we can't use `$1`, `$2`, and so on because we don't know how many files there are.
 Instead, we use the special variable `$@`, which means, "All of the command-line parameters to the shell script." So (`"$@"` is equivalent to `"$1"` `"$2"` ...)
 
-We put `$@` inside double-quotes to handle the case of parameters containing spaces. 
+We put `$@` inside double-quotes to handle the case of parameters containing spaces.
 
 ~~~ {.input}
 $ bash group.sh africa*.txt
@@ -139,7 +166,7 @@ $ cat group.sh
 ~~~ {.output}
 # Concatenates a group of files and returns the total number of lines.
 # Usage: group.sh files
-cat "$@" 
+cat "$@"
 ~~~
 
 Now we can use the `>` trick to output our result.
