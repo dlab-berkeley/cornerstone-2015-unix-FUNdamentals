@@ -103,7 +103,7 @@ We have called the variable in this loop `filename` in order to make its purpose
 ~~~ {.input}
 $ for x in africa1.text africa2.txt
  do
-    wc -w $filename
+    wc -w $x
  done
 ~~~
 
@@ -285,42 +285,15 @@ then she can re-run `cat africa1` simply by typing `!475`.
 
 #### Challenge 1
 
-Suppose that `ls` initially displays:
+The `export` function allows you to create variables that persist in the shell outside of any loops:
 
-~~~
-fructose.dat    glucose.dat   sucrose.dat
+~~~ {.input}
+export VARIABLE=VALUE
 ~~~
 
-What is the output of:
-
-~~~
-for datafile in *.dat
-do
-    ls *.dat
-done
-~~~
+Set VARIABLE equal to the number of characters in animals.txt, and export it.
 
 #### Challenge 2
-
-What is the effect of this loop?
-
-~~~
-for sugar in fructose.dat glucose.dat sucrose.dat
-do
-    echo $sugar
-    cat $sugar xylose.dat
-done
-~~~
-
-1.  Prints `fructose.dat`, `glucose.dat`, and `sucrose.dat`, and
-    copies `sucrose.dat` to create `xylose.dat`.
-2.  Prints `fructose.dat`, `glucose.dat`, and `sucrose.dat`, and
-    concatenates all three files to create `xylose.dat`.
-3.  Prints `fructose.dat`, `glucose.dat`, `sucrose.dat`, and
-    `xylose.dat`, and copies `sucrose.dat` to create `xylose.dat`.
-4.  None of the above.
-
-#### Challenge 3
 
 The `expr` does simple arithmetic using command-line parameters:
 
@@ -331,14 +304,14 @@ $ expr 30 / 5 - 2
 4
 ~~~
 
-Given this, what is the output of:
+The code below does not work. Correct it, and store it in my_files/script.sh
 
 ~~~
 for left in 2 3
 do
-    for right in $left
+    for right in left
     do
-        expr $left + $right
+        expr left + right
     done
 done
 ~~~
