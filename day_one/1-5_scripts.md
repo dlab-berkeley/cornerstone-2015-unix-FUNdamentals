@@ -235,8 +235,8 @@ and save it in my_files/script.R.
 
 Write a shell script called `longest.sh` that takes the name of a
 directory and a filename extension as its parameters, and prints
-out the name of the file with the most lines in that directory
-with that extension. For example:
+out the number of lines and name of the file with the most lines in
+that directory with that extension. For example:
 
 ~~~
 $ bash my_files/longest.sh /tmp/data pdb
