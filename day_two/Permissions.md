@@ -220,18 +220,6 @@ The group ownership of a file or directory may be changed with <tt class="user">
 
 In the example above, we changed the group ownership of <tt>some_file</tt> from its previous group to "new_group". You must be the owner of the file or directory to perform a <tt class="user">chgrp</tt>.
 
-<div class="pagenav">
-
-[Previous](lc3_lts0080.php) | [Contents](lc3_learning_the_shell.php#contents) | [Top](#top) | [Next](lc3_lts0100.php)
-
-</div>
-
-</div>
-
- |
-
-<div class="body">
-
 * * *
 
 © 2000-2015, [William E. Shotts, Jr.](mailto:bshotts@users.sourceforge.net) Verbatim copying and distribution of this entire article is permitted in any medium, provided this copyright notice is preserved.
