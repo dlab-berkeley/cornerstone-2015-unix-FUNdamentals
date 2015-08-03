@@ -17,14 +17,13 @@ The multi-user capability of Unix-like systems is a feature that is deeply ingra
 
 In order to make this practical, a method had to be devised to protect the users from each other. After all, you could not allow the actions of one user to crash the computer, nor could you allow one user to interfere with the files belonging to another user.
 
-This lesson will cover the following commands:
-
-chmod - modify file access rights
-su - temporarily become the superuser
-sudo - temporarily become the superuser
-chown - change file ownership
-chgrp - change a file's group ownership
-File Permissions
+> ## Learning Objectives
+>
+> *   chmod - modify file access rights
+> *   su - temporarily become the superuser
+> *   sudo - temporarily become the superuser
+> *   chown - change file ownership
+> *   chgrp - change a file's group ownership
 
 On a Linux system, each file and directory is assigned access rights for the owner of the file, the members of a group of related users, and everybody else. Rights can be assigned to read a file, to write a file, and to execute a file (i.e., run the file as a program).
 
