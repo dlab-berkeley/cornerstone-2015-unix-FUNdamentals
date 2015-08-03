@@ -1,11 +1,11 @@
-Those who do not understand UNIX are condemned to reinvent it, poorly.
-— Henry Spencer
-
 ---
 title: Unix Permissions
 subtitle: Introducing Unix Permissions
 minutes: 5
 ---
+
+Those who do not understand UNIX are condemned to reinvent it, poorly.
+â€” Henry Spencer
 
 # Unix Permissions
 
@@ -151,4 +151,4 @@ The group ownership of a file or directory may be changed with chgrp. This comma
 [me@linuxbox me]$ chgrp new_group some_file
 In the example above, we changed the group ownership of some_file from its previous group to "new_group". You must be the owner of the file or directory to perform a chgrp.
 ---
-© 2000-2015, William E. Shotts, Jr. Verbatim copying and distribution of this entire article is permitted in any medium, provided this copyright notice is preserved.
+Â© 2000-2015, William E. Shotts, Jr. Verbatim copying and distribution of this entire article is permitted in any medium, provided this copyright notice is preserved.
