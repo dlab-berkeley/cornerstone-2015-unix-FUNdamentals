@@ -154,6 +154,6 @@ The group ownership of a file or directory may be changed with chgrp. This comma
 [me@linuxbox me]$ chgrp new_group some_file
 In the example above, we changed the group ownership of some_file from its previous group to "new_group". You must be the owner of the file or directory to perform a chgrp.
 ---
-Adapted from [Permissions](http://linuxcommand.org/lc3_lts0090.php)
+Adapted from [Linuxcommand.org](http://linuxcommand.org/lc3_lts0090.php)
 
 © 2000-2015, William E. Shotts, Jr. Verbatim copying and distribution of this entire article is permitted in any medium, provided this copyright notice is preserved.
