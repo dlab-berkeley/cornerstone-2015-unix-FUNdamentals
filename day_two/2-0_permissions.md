@@ -29,20 +29,24 @@ On a Linux system, each file and directory is assigned access rights for the own
 
 To see the permission settings for a file, we can use the ls command. As an example, we will look at the bash program which is located in the /bin directory:
 
+~~~ {.input}
 [me@linuxbox me]$ ls -l /bin/bash
 
 
 -rwxr-xr-x 1 root root  316848 Feb 27  2000 /bin/bash
+~~~
+
 Here we can see:
 
-The file "/bin/bash" is owned by user "root"
-The superuser has the right to read, write, and execute this file
-The file is owned by the group "root"
-Members of the group "root" can also read and execute this file
-Everybody else can read and execute this file
+> *   The file "/bin/bash" is owned by user "root"
+> *   The superuser has the right to read, write, and execute this file
+> *   The file is owned by the group "root"
+> *   Members of the group "root" can also read and execute this file
+> *   Everybody else can read and execute this file
+
 In the diagram below, we see how the first portion of the listing is interpreted. It consists of a character indicating the file type, followed by three sets of three characters that convey the reading, writing and execution permission for the owner, group, and everybody else.
 
-permissions diagram
+![r](https://github.com/jackspaceBerkeley/cornerstone-2015-unix-FUNdamentals/blob/master/day_two/images/file_permissions.png)
 
 chmod
 
