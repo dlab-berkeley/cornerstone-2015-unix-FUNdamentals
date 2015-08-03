@@ -1,34 +1,3 @@
-<a name="top"></a>
-
-<div class="body">![Title graphic](images/blank_title.jpg)</div>
-
- |
-| 
-
-<div class="navbar">
-
-*   [Home](index.php)
-*   [Learning The Shell](lc3_learning_the_shell.php)
-*   [Writing Shell Scripts](lc3_writing_shell_scripts.php)
-*   [Resources](lc3_resources.php)
-*   [The Book](tlcl.php)
-
-* * *
-
-*   [Blog](http://lcorg.blogspot.com)
-
-</div>
-
- | 
-
-<div class="body">
-
-<div class="pagenav">
-
-[Previous](lc3_lts0080.php) | [Contents](lc3_learning_the_shell.php#contents) | [Next](lc3_lts0100.php)
-
-</div>
-
 # Permissions
 
 The Unix-like operating systems, such as Linux differ from other computing systems in that they are not only _multitasking_ but also _multi-user_.
@@ -265,8 +234,8 @@ In the example above, we changed the group ownership of <tt>some_file</tt> from 
 
 * * *
 
-© 2000-2015, [William E. Shotts, Jr.](mailto:bshotts@users.sourceforge.net) Verbatim copying and distribution of this entire article is permitted in any medium, provided this copyright notice is preserved.
+Â© 2000-2015, [William E. Shotts, Jr.](mailto:bshotts@users.sourceforge.net) Verbatim copying and distribution of this entire article is permitted in any medium, provided this copyright notice is preserved.
 
-Linux® is a registered trademark of Linus Torvalds.
+LinuxÂ® is a registered trademark of Linus Torvalds.
 
 </div>
