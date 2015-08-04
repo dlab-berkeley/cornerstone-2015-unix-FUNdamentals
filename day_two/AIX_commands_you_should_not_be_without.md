@@ -60,7 +60,7 @@ In AIX V5.2, the 32-bit kernel is installed by default. In AIX V5.3, the 64-bit 
 
 **How do I know if my machine is capable of running AIX 5L Version 5.3?**
 
-AIX 5L Version 5.3 supports all 32- bit and 64-bit Common Hardware Reference Platform (CHRP)-based IBM Power® hardware. Only 64-bit CHRP systems are supported with AIX 6.1 and AIX V7.1.
+AIX 5L Version 5.3 supports all 32- bit and 64-bit Common Hardware Reference Platform (CHRP)-based IBM PowerÂ® hardware. Only 64-bit CHRP systems are supported with AIX 6.1 and AIX V7.1.
 
 **How do I know if my machine is CHRP-based?**
 
@@ -181,7 +181,7 @@ The `uname` command provides details about your system.
 
 | Command | Description |
 | --- | --- |
-| **uname -p** | Displays the chip type of the system. For example, IBM PowerPC®. |
+| **uname -p** | Displays the chip type of the system. For example, IBM PowerPCÂ®. |
 | **uname -r** | Displays the release number of the operating system. |
 | **uname -s** | Displays the system name. For example, AIX. |
 | **uname -n** | Displays the name of the node. |
@@ -477,7 +477,7 @@ To remount the mounted read-only JFS2 file system to a read-write file system, e
 
 <div class="codesection">
 
-<pre class="displaycode">mount –o remount,rw fsname</pre>
+<pre class="displaycode">mount Â–o remount,rw fsname</pre>
 
 </div>
 
@@ -898,7 +898,7 @@ To get default LPAR statistics with summary statistics on Hypervisor, enter the 
 
 <div class="codesection">
 
-<pre class="displaycode">lparstat –h 1 1</pre>
+<pre class="displaycode">lparstat Â–h 1 1</pre>
 
 </div>
 
@@ -914,7 +914,7 @@ To get detailed hypervisor statistics, enter the following command:
 
 <div class="codesection">
 
-<pre class="displaycode">lparstat –H 1 1</pre>
+<pre class="displaycode">lparstat Â–H 1 1</pre>
 
 </div>
 
@@ -922,7 +922,7 @@ To get statistics about the shared memory pool and the I/O memory entitlement of
 
 <div class="codesection">
 
-<pre class="displaycode">lparstat –m</pre>
+<pre class="displaycode">lparstat Â–m</pre>
 
 </div>
 
@@ -1213,7 +1213,7 @@ To synchronize the copies on volume groups `vg04` and `vg05`, enter:
 **How do I replace a disk?**
 
 1.  `extendvg`_ `VolumeGroupName hdisk_new`_
-2.  `migratepv`_ `hdisk_bad hdisk_new`_
+2.  `migratepv`_ `hdisk_badÂ hdisk_new`_
 3.  `reducevg -d` _`VolumeGroupName hdisk_bad`_
 
 The command `migratepv` moves allocated physical partitions from one physical volume to one or more other physical volumes.
@@ -1827,3 +1827,5 @@ Admittedly, a list such as this can be helpful in quickly answering some of your
     *   [Virtualization Forum](https://www.ibm.com/developerworks/forums/forum.jspa?forumID=748)
     *   More [AIX and UNIX Forums](https://www.ibm.com/developerworks/forums/dw_auforums.jsp)
     *   [AIX Networking](https://www.ibm.com/developerworks/forums/forum.jspa?forumID=1333)
+   
+Adapted from [IBMdeveloperWorks - IBM AIX commands you should not leave home without](https://www.ibm.com/developerworks/aix/library/au-aix_cmds/)
