@@ -1,7 +1,3 @@
-<div class="ibm-columns">
-
-<div class="ibm-col-1-1">
-
 ## Introduction
 
 As you know, AIX has a vast array of commands that enable you to do a multitude of tasks. Depending on what you need to accomplish, you use only a certain subset of these commands. These subsets differ from user to user and from need to need. However, there are a few core commands that you commonly use. You need these commands either to answer your own questions or to provide answers to the queries of the support professionals.
@@ -64,7 +60,7 @@ In AIX V5.2, the 32-bit kernel is installed by default. In AIX V5.3, the 64-bit 
 
 **How do I know if my machine is capable of running AIX 5L Version 5.3?**
 
-AIX 5L Version 5.3 supports all 32- bit and 64-bit Common Hardware Reference Platform (CHRP)-based IBM Power® hardware. Only 64-bit CHRP systems are supported with AIX 6.1 and AIX V7.1.
+AIX 5L Version 5.3 supports all 32- bit and 64-bit Common Hardware Reference Platform (CHRP)-based IBM PowerÂ® hardware. Only 64-bit CHRP systems are supported with AIX 6.1 and AIX V7.1.
 
 **How do I know if my machine is CHRP-based?**
 
@@ -185,7 +181,7 @@ The `uname` command provides details about your system.
 
 | Command | Description |
 | --- | --- |
-| **uname -p** | Displays the chip type of the system. For example, IBM PowerPC®. |
+| **uname -p** | Displays the chip type of the system. For example, IBM PowerPCÂ®. |
 | **uname -r** | Displays the release number of the operating system. |
 | **uname -s** | Displays the system name. For example, AIX. |
 | **uname -n** | Displays the name of the node. |
@@ -481,7 +477,7 @@ To remount the mounted read-only JFS2 file system to a read-write file system, e
 
 <div class="codesection">
 
-<pre class="displaycode">mount –o remount,rw fsname</pre>
+<pre class="displaycode">mount Â–o remount,rw fsname</pre>
 
 </div>
 
@@ -902,7 +898,7 @@ To get default LPAR statistics with summary statistics on Hypervisor, enter the 
 
 <div class="codesection">
 
-<pre class="displaycode">lparstat –h 1 1</pre>
+<pre class="displaycode">lparstat Â–h 1 1</pre>
 
 </div>
 
@@ -918,7 +914,7 @@ To get detailed hypervisor statistics, enter the following command:
 
 <div class="codesection">
 
-<pre class="displaycode">lparstat –H 1 1</pre>
+<pre class="displaycode">lparstat Â–H 1 1</pre>
 
 </div>
 
@@ -926,7 +922,7 @@ To get statistics about the shared memory pool and the I/O memory entitlement of
 
 <div class="codesection">
 
-<pre class="displaycode">lparstat –m</pre>
+<pre class="displaycode">lparstat Â–m</pre>
 
 </div>
 
@@ -1217,7 +1213,7 @@ To synchronize the copies on volume groups `vg04` and `vg05`, enter:
 **How do I replace a disk?**
 
 1.  `extendvg`_ `VolumeGroupName hdisk_new`_
-2.  `migratepv`_ `hdisk_bad hdisk_new`_
+2.  `migratepv`_ `hdisk_badÂ hdisk_new`_
 3.  `reducevg -d` _`VolumeGroupName hdisk_bad`_
 
 The command `migratepv` moves allocated physical partitions from one physical volume to one or more other physical volumes.
@@ -1882,7 +1878,7 @@ By clicking **Submit**, you agree to the [developerWorks terms of use](https://w
 
 <div class="ibm-buttons-row">
 
-<input class="ibm-btn-arrow-pri" name="ibm-submit" value="Submit" onclick="dwsi.siInst.signin();return false;" type="submit"><span class="ibm-sep"> </span><input value="Cancel" type="button" name="ibm-cancel" class="ibm-btn-cancel-sec" onclick="dwsi.siInst.clearForm();ibmweb.overlay.hide('signin_overlay');return false;">
+<input class="ibm-btn-arrow-pri" name="ibm-submit" value="Submit" onclick="dwsi.siInst.signin();return false;" type="submit"><span class="ibm-sep">Â </span><input value="Cancel" type="button" name="ibm-cancel" class="ibm-btn-cancel-sec" onclick="dwsi.siInst.clearForm();ibmweb.overlay.hide('signin_overlay');return false;">
 
 </div>
 
@@ -1942,13 +1938,13 @@ Required fields are indicated with an asterisk (<span class="ibm-required">*</sp
 
 <form id="dFormId" method="post" action="" name="dForm" onsubmit="return false;" class="ibm-column-form">
 
-<label for="displayname">Display name:<span class="ibm-required">*</span></label><span><input name="displayname" id="displayname" size="25" value="" type="text" onkeypress="dwsi.siInst.handleEP(event,this.form);"></span><span class="ibm-form-note">(Must be between 3 – 31 characters.)</span>
+<label for="displayname">Display name:<span class="ibm-required">*</span></label><span><input name="displayname" id="displayname" size="25" value="" type="text" onkeypress="dwsi.siInst.handleEP(event,this.form);"></span><span class="ibm-form-note">(Must be between 3 Â– 31 characters.)</span>
 
 By clicking **Submit**, you agree to the [developerWorks terms of use](https://www.ibm.com/developerworks/community/terms/).
 
 <div class="ibm-buttons-row">
 
-<input class="ibm-btn-arrow-pri" name="ibm-submit" value="Submit" onclick="dwsi.siInst.signin();return false;" type="submit"><span class="ibm-sep"> </span><input value="Cancel" type="button" name="ibm-cancel" class="ibm-btn-cancel-sec" onclick="dwsi.siInst.clearForm();ibmweb.overlay.hide('displayname_overlay');return false;">
+<input class="ibm-btn-arrow-pri" name="ibm-submit" value="Submit" onclick="dwsi.siInst.signin();return false;" type="submit"><span class="ibm-sep">Â </span><input value="Cancel" type="button" name="ibm-cancel" class="ibm-btn-cancel-sec" onclick="dwsi.siInst.clearForm();ibmweb.overlay.hide('displayname_overlay');return false;">
 
 </div>
 
@@ -2019,38 +2015,3 @@ All information submitted is secure.
 
     ### [IBM evaluation software](http://www.ibm.com/developerworks/downloads/?ca=dti-tiles-evaluate)
 
-    Evaluate IBM software and solutions, and transform challenges into opportunities.
-
-</div>
-
-</div>
-
-<div class="ibm-columns">
-
-<div class="ibm-col-1-1">
-
-<div class="ibm-alternate-rule">
-
-* * *
-
-</div>
-
-[Back to top](#ibm-content)
-
-</div>
-
-</div>
-
-<div class="metavalue">static.content.url=http://www.ibm.com/developerworks/js/artrating/</div>
-
-<div class="metavalue">SITE_ID=1</div>
-
-<div class="metavalue">Zone=AIX and UNIX</div>
-
-<div class="metavalue">ArticleID=345669</div>
-
-<div class="metavalue">ArticleTitle=IBM AIX commands you should not leave home without</div>
-
-<div class="metavalue">publish-date=04042014</div>
-
-<script language="javascript" type="text/javascript">document.write('<div class="metavalue">url='+location.href.replace(/</g, '%3C')+'</div>');</script>
