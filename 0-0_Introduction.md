@@ -72,6 +72,6 @@ The Day One lesson materials were created by [Rochelle Terman](https://github.co
 *   [Dav Clark](https://github.com/davclark)
 *   [Aaron Culich](https://github.com/aculich)
 
-The Day Two lesson materials were created by Jack Burris...
+The Day Two lesson materials were created by [Jack Burris](https://github.com/jackspaceBerkeley)
 
 The Day Three materials were created by Raymond Yee...
