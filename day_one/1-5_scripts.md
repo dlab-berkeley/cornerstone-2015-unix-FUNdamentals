@@ -274,6 +274,12 @@ echo $@.dat
 
 What happens if you rename `example.sh` to `example.R`?
 
+When you feel you have met these challenges successfully, cd into test/ and type
+
+~~~ {.input}
+. 1-5_test.sh
+~~~
+
 ---
 
 Adapted from: [Software Carpentry](http://software-carpentry.org/v5/novice/shell/05-script.html)
