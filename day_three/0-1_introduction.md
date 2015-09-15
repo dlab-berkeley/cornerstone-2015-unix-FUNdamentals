@@ -41,23 +41,19 @@ This makes it an enormously powerful tool for collaborative work
 > All of D-Lab's teaching materials and code are developed collaboratively with `git`
 
 
-## For this workshop, we'll also be using GitHub
+## For this workshop, we're using a shared repository on CRMPACS1
 
-GitHub is a website for keeping tabs on all the modified versions of your file everywhere it appears
-
-GitHub makes it very easy to download, modify, and share code
-
-
-> Because of difficulties with CRAN, many R writers publish packages on GitHub instead
+You may not have realized that this even WAS a Git repository initially. To
+casual observation, a Git respository looks just like a regular collection of
+files.
 
 ## About me
 
-My name is Dillon Niederhut, and I am a PhD Candidate in Anthropology
+My name is Dav Clark, and I am a Data Scientist in the D-Lab and BIDS
 
 * I won't be able to answer all your questions.
 * No one will.
-* But especially me.
-* Because programming is one endless Google Search
+* Because version control is one endless Google Search
 
 > At D-Lab, we call this last point "Rochelle's Law", after Rochelle Terman, who once pronounced that the only difference between a clueless user and a tech support guru is the amount of time spent googling
 
@@ -67,4 +63,3 @@ My name is Dillon Niederhut, and I am a PhD Candidate in Anthropology
 This learning module borrows and adapts materials from the following organizations and individuals. Thank you!
 
 [Software Carpentry](https://github.com/swcarpentry/git-novice)
-[Dav Clark](https://github.com/davclark/git-fundamentals)

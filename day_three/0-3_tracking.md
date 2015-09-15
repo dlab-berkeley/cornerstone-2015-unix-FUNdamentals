@@ -130,7 +130,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   README
+    modified:   README
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
@@ -201,4 +201,3 @@ Changes to be committed:
 This learning module borrows and adapts materials from the following organizations and individuals. Thank you!
 
 [Software Carpentry](https://github.com/swcarpentry/git-novice)
-[Dav Clark](https://github.com/davclark/git-fundamentals)

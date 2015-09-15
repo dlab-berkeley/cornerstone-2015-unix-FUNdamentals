@@ -13,4 +13,4 @@ Complete syllabus [on GDrive](https://drive.google.com/folderview?id=0B6YIUyPLQP
 
 ## Day 3 - managing collaborative projects
 
-*Instructor:* Raymond Yee
+*Instructor:* Dav Clark

@@ -6,7 +6,9 @@ minutes:
 
 ## Git history
 
-Git takes care of all these things for you behind the scenes (even branching and merging, which we'll talk about later), but sometimes you need to know what changed and when
+Git takes care of all these things for you behind the scenes (even branching
+and merging, which we'll talk about later), but sometimes you need to know what
+changed and when
 
 ~~~{.input}
 git log
@@ -81,19 +83,23 @@ new file mode 100644
 index 0000000..e69de29
 ~~~
 
-So we can see that the file was fine before commit `dffe554`, and that it was ruined by some schmuck named `Dillon Niederhut`
+So we can see that the file was fine before commit `dffe554`, and that it was
+ruined by some schmuck named `Dillon Niederhut`
 
 ## Recovering old files
 
-To get a file back to its old state, call checkout with the commit hash and the file name
+To get a file back to its old state, call checkout with the commit hash and the
+file name. *Every committed version of a file will always be available!*
+(Unless you work very hard to get rid of it.)
 
->When you do this on your own computers, keep in mind the hash will be different
+> When you do this on your own computers, keep in mind the hash will be different
 
 ~~~{.input}
 git checkout 07f5ba5 README
 ~~~
 
-and now if you look at the README file, you'll see it (and it alone!) has gone back to the way it was before the bug
+Now if you look at the README file, you'll see it (and it alone!) has gone
+back to the way it was before the bug
 
 ~~~{.output}
 Temporary git repository
