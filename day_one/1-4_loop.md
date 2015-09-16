@@ -26,23 +26,23 @@ Let's say we'd like to make a backup directory called 'backup' and copy our arti
 First we can make a directory and copy our files:
 
 ~~~ {.input}
-$ cd ~/programming-fundamentals/data/articles
-$ mkdir backup
-$ cp *.txt backup
-$ ls backup
+> cd ~/programming-fundamentals/data/articles
+> mkdir backup
+> cp *.txt backup
+> ls backup
 ~~~
 
 So far so good. But when we try to rename the files, we can't use:
 
 ~~~ {.input}
-$ cd backup
-$ mv *.txt original-*.txt
+> cd backup
+> mv *.txt original-*.txt
 ~~~
 
 because that would expand to:
 
 ~~~ {.input}
-$ mv africa1.txt africa2.txt ... west999.txt original-*.txt
+> mv africa1.txt africa2.txt ... west999.txt original-*.txt
 ~~~
 
 This wouldn't back up our files, instead we get an error
@@ -60,11 +60,12 @@ Instead, we can use a **loop** to do some operation once for each thing in a lis
 
 
 ~~~ {.input}
-$ for filename in africa1.text africa2.txt
+> for filename in africa1.text africa2.txt
  do
     wc -w $filename
  done
 ~~~
+
 ~~~ {.output}
  538 africa1.txt
  242 africa2.txt
@@ -101,7 +102,7 @@ so this loop prints out the word count of each data file in turn.
 We have called the variable in this loop `filename` in order to make its purpose clearer to human readers. The shell itself doesn't care what the variable is called; if we wrote this loop as:
 
 ~~~ {.input}
-$ for x in africa1.text africa2.txt
+> for x in africa1.text africa2.txt
  do
     wc -w $x
  done
@@ -110,7 +111,7 @@ $ for x in africa1.text africa2.txt
 or:
 
 ~~~ {.input}
-$ for temperature in africa1.text africa2.txt
+> for temperature in africa1.text africa2.txt
  do
     wc -w $temperature
  done
@@ -143,7 +144,7 @@ africa99.txt
 The shell starts by expanding `africa*.txt` to create the list of files it will process. The **loop body** then executes two commands for each of those files. The first, `echo`, just prints its command-line parameters to standard output. For example:
 
 ~~~ {.input}
-$ echo hello there
+> echo hello there
 ~~~
 
 prints:
@@ -272,7 +273,7 @@ mv africa2.txt original-africa2.txt
 Another way to repeat previous work is to use the `history` command to get a list of the last few hundred commands that have been executed, and then to use `!123` (where "123" is replaced by the command number) to repeat one of those commands. For example, if Rochelle types this:
 
 ~~~
-$ history | tail -5
+> history | tail -5
   474  for filename in *.txt; do sed -i".bak" '1d' $filename; done
   475  cat africa1.txt
   476  rm *.bak
