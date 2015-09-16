@@ -21,11 +21,13 @@ For historical reasons, a bunch of commands saved in a file is usually called a 
 Let's start by going back to `articles` and creating a file called `group.sh`:
 
 ~~~ {.input}
-$ cd ~/programming-fundamentals/data/articles
-$ touch group.sh
-$ nano group.sh
+> cd ~/programming-fundamentals/data/articles
+> touch group.sh
 ~~~
-~~~
+
+open in Notepad++ and write:
+
+~~~ {.input}
 cat africa*.txt | wc -l
 ~~~
 
@@ -42,8 +44,9 @@ First we have to tell the shell what program the script is in. If we want to run
 Our shell is called `bash`, so we run the following command:
 
 ~~~ {.input}
-$ bash group.sh
+> bash group.sh
 ~~~
+
 ~~~ {.output}
 136
 ~~~
@@ -72,6 +75,7 @@ Suppose you want to create a program that tells you where you are. In bash, you 
 echo "pwd;" > my_files/script.sh
 bash my_files/script.sh
 ~~~
+
 ~~~ {.output}
 /home/rochelle/unix-fundamentals
 ~~~
@@ -82,6 +86,7 @@ But what if you want to do it in R? The process is nearly identical:
 echo "getwd()" > my_files/script.R
 R --silent -f my_files/script.R
 ~~~
+
 ~~~ {.output}
 [1] /home/rochelle/unix-fundamentals
 ~~~
@@ -95,10 +100,9 @@ What if we want concatenate an arbitrary group of files? We could edit `group.sh
 
 Instead, let's edit `group.sh` and replace `africa*.txt` with a special variable called `"$@"`:
 
+open group.sh in Notepad++
+
 ~~~ {.input}
-$ nano group.sh
-~~~
-~~~ {.output}
 cat "$@" | wc -l
 ~~~
 
@@ -108,8 +112,9 @@ Instead, we use the special variable `$@`, which means, "All of the command-line
 We put `$@` inside double-quotes to handle the case of parameters containing spaces.
 
 ~~~ {.input}
-$ bash group.sh africa*.txt
+> bash group.sh africa*.txt
 ~~~
+
 ~~~ {.output}
 136
 ~~~
@@ -117,8 +122,9 @@ $ bash group.sh africa*.txt
 or on a different file like this:
 
 ~~~ {.input}
-$ bash group.sh asia*.txt
+> bash group.sh asia*.txt
 ~~~
+
 ~~~ {.output}
 145
 ~~~
@@ -128,8 +134,9 @@ $ bash group.sh asia*.txt
 This works, but it may take the next person who reads `group.sh` a moment to figure out what it does. We can improve our script by adding some **comments** at the top:
 
 ~~~ {.input}
-$ cat group.sh
+> cat group.sh
 ~~~
+
 ~~~ {.output}
 # Concatenates a group of files and returns the total number of lines.
 # Usage: group.sh files
@@ -161,8 +168,9 @@ The computer ignores comments, but they're invaluable for helping people underst
 We can use our script to redirect output files, too. Let's change the script to just:
 
 ~~~ {.input}
-$ cat group.sh
+> cat group.sh
 ~~~
+
 ~~~ {.output}
 # Concatenates a group of files and returns the total number of lines.
 # Usage: group.sh files
@@ -172,8 +180,8 @@ cat "$@"
 Now we can use the `>` trick to output our result.
 
 ~~~ {.input}
-$ bash group.sh asia*.txt > all-asia.txt
-$ cat all-asia.txt
+> bash group.sh asia*.txt > all-asia.txt
+> cat all-asia.txt
 ~~~
 
 The only caveat is that each time you modify the script, you should check that the comment is still accurate: an explanation that sends the reader in the wrong direction is worse than none at all.
@@ -184,7 +192,7 @@ Now, suppose we have just run a series of commands that did something useful ---
 We'd like to be able to re-create the graph later if we need to, so we want to save the commands in a file. Instead of typing them in again (and potentially getting them wrong) we can do this:
 
 ~~~ {.input}
-$ history | tail -4 > redo-figure-3.sh
+> history | tail -4 > redo-figure-3.sh
 ~~~
 
 The file `redo-figure-3.sh` now contains:
@@ -239,7 +247,7 @@ out the number of lines and name of the file with the most lines in
 that directory with that extension. For example:
 
 ~~~
-$ bash my_files/longest.sh /tmp/data pdb
+> bash my_files/longest.sh /tmp/data pdb
 ~~~
 
 would print the name of the `.pdb` file in `/tmp/data` that has
