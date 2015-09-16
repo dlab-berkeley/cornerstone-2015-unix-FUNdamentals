@@ -60,7 +60,6 @@ Specifically, by the end of this week, we want everyone here be able to:
 * Use essential Unix commands in bash
 * Write your own shell script
 * Clone, add, commit, and push with Git
-...
 * Get help
 
 ### Acknowledgments
@@ -74,4 +73,4 @@ The Day One lesson materials were created by [Rochelle Terman](https://github.co
 
 The Day Two lesson materials were created by [Jack Burris](https://github.com/jackspaceBerkeley)
 
-The Day Three materials were created by Raymond Yee...
+The Day Three materials were created by [Dillon Niederhut](https://github.com/deniederhut) for the D-Lab at UC Berkeley, and were modified by [Dav Clark](https://github.com/davclark) for Cornerstone Research.
