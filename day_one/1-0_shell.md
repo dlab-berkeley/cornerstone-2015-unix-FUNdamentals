@@ -98,9 +98,9 @@ It is important to understand that, as far as the **read-evaluate-print loop** i
 
 ### Bash
 
-The most popular Unix shell is **Bash**, the Bourne Again Shell (so-called because it's derived from a shell written by Stephen Bourne --- this is what passes for wit among programmers). Bash is the default shell on most modern implementations of **Unix**, and in most packages that provide Unix-like tools for Windows. Today, we will be using git-bash, a shell that Github ships for Windows users.
+The most popular Unix shell is **Bash**, the Bourne Again Shell (so-called because it's derived from a shell written by Stephen Bourne --- this is what passes for wit among programmers). Bash is the default shell on most modern implementations of **Unix**, and in most packages that provide Unix-like tools for Windows. Today, we will be using [MobaXterm](http://mobaxterm.mobatek.net/), a super fancy remote network client, as a terminal emulator to get you used to running Unix commands.
 
-Your AIX systems have ksh set as the default shell instead of bash. You will probably not notice any differences for your workflow, with the major exception that ksh does not support tab completion (you'll see this in a little bit).
+AIX systems have ksh set as the default shell instead of bash. You will probably not notice any differences for your workflow, with the major exception that ksh does not support tab completion.
 
 ### Why Use a Shell
 
