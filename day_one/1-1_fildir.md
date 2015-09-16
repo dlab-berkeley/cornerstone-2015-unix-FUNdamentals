@@ -20,20 +20,21 @@ The part of the operating system responsible for managing files and directories 
 Several commands are frequently used to create, inspect, rename, and delete files and directories. To start exploring them, let's open a shell window:
 
 ~~~ {.input}
-$
+>
 ~~~
 
-The dollar sign is a **prompt**, which shows us that the shell is waiting for input; your shell may show something more elaborate.
+The angular bracket is a **prompt**, which shows us that the shell is waiting for input; your shell may show something more elaborate.
 
 Type the command `whoami`, then press the Enter key (sometimes marked Return) to send the command to the shell.
 
 The command's output is the ID of the current user, i.e., it shows us who the shell thinks we are:
 
 ~~~ {.input}
-$ whoami
+> whoami
 ~~~
+
 ~~~ {.output}
-oski
+DNiederhut
 ~~~
 
 More specifically, when we type `whoami` the shell:
@@ -49,13 +50,14 @@ Next, let's find out where we are by running a command called `pwd` (which stand
 
 At any moment, our **current working directory** is our current default directory, i.e., the directory that the computer assumes we want to run commands in  unless we explicitly specify something else.
 
-Here, the computer's response is `/home/oski`, which is the **home directory**:
+Here, the computer's response is `/home/mobaxterm`, which is the **home directory**:
 
 ~~~ {.input}
-$ pwd
+> pwd
 ~~~
+
 ~~~ {.output}
-/home/oski
+/home/mobaxterm
 ~~~
 
 > #### Alphabet Soup
@@ -77,9 +79,9 @@ $ pwd
 
 To understand what a "home directory" is, let's have a look at how the file system as a whole is organized. At the top is the **root directory** that holds everything else.
 
-We refer to it using a slash character `/` on its own; this is the leading slash in `/home/oski`.
+We refer to it using a slash character `/` on its own; this is the leading slash in `/home/mobaxterm`.
 
-Note that the slashes point the *opposite* way on Unix machines. Backslashes are reserved for handling special characters like "\n".
+Note that the slashes point the *opposite* way on Unix machines. Backslashes, which separate levels of a directory in Windows, are reserved for handling special characters like "\n".
 
 Inside that directory are several other directories: `bin` (which is where some built-in programs are stored), `data` (holding miscellaneous data files) `etc` (where local configuration files are stored), `tmp` (for temporary files that don't need to be stored long-term), and so on.
 
@@ -87,8 +89,6 @@ Inside that directory are several other directories: `bin` (which is where some 
 > identical. The following image shows a file system graph for the typical Mac.
 
 ![File Directory](https://swcarpentry.github.io/shell-novice/fig/home-directories.svg)
-
-We know that our current working directory `/home/oski` is stored inside `/home` because `/home` is the first part of its name. Similarly, we know that `/home` is stored inside the root directory `/` because its name begins with `/`.
 
 > Notice that there are two meanings for the `/` character.
 > When it appears at the front of a file or directory name,
@@ -100,8 +100,9 @@ We know that our current working directory `/home/oski` is stored inside `/home`
 Let's see what's in Rochelle's home directory by running `ls`, which stands for "listing":
 
 ~~~ {.input}
-$ ls
+> ls
 ~~~
+
 ~~~ {.output}
 data       file.txt                  Public                     Videos
 Desktop    Music                     R
@@ -156,8 +157,9 @@ This is actually a program called `less`, which displays the contents of files i
 We can make its output more comprehensible by using the **flag** `-F`, which tells `ls` to add a trailing `/` to the names of directories:
 
 ~~~ {.input}
-$ ls -F
+> ls -F
 ~~~
+
 ~~~ {.output}
 data/       Music/                     setup_ipython_notebook.sh*
 Desktop/    Pictures/                  Templates/
@@ -195,8 +197,9 @@ And note that **whitespace matters**! There is a space between `ls` and `-F`: wi
 Now let's take a look at what's in Rochelle's `data` directory by running `ls -F data`, i.e., the command `ls` with the **arguments** `-F` and `data`. The second argument --- the one *without* a leading dash --- tells `ls` that we want a listing of something other than our current working directory:
 
 ~~~ {.input}
-$ ls -F data
+> ls -F data
 ~~~
+
 ~~~ {.output}
 animals.txt articles/
 ~~~
@@ -216,11 +219,11 @@ If we run `ls -F /data` (*with* a leading slash) we get a different answer,
 because `/data` is an **absolute path**:
 
 ~~~ {.input}
-$ ls -F /data
+> ls -F /data
 ~~~
+
 ~~~ {.output}
-access.log    backup/    hardware.cfg
-network.cfg
+ls: data: No such file or directory
 ~~~
 
 The leading `/` tells the computer to follow the path from the root of the file system, so it always refers to exactly one directory, no matter where we are when we run the command.
@@ -228,14 +231,17 @@ The leading `/` tells the computer to follow the path from the root of the file 
 What if we want to change our current working directory? Before we do this, `pwd` shows us that we're in `/home/oski`, and `ls` without any arguments shows us that directory's contents:
 
 ~~~ {.input}
-$ pwd
+> pwd
 ~~~
+
 ~~~ {.output}
 /home/oski
 ~~~
+
 ~~~ {.input}
-$ ls
+> ls
 ~~~
+
 ~~~ {.output}
 data       file.txt                  Public                     Videos
 Desktop    Music                     R
@@ -248,22 +254,25 @@ Downloads  programming-fundamentals  Templates
 We can use `cd` followed by a directory name to change our working directory. `cd` stands for "change directory", which is a bit misleading: the command doesn't change the directory, it changes the shell's idea of what directory we are in.
 
 ~~~ {.input}
-$ cd programming-fundamentals
+> cd programming-fundamentals
 ~~~
 
-`cd` doesn't print anything, but if we run `pwd` after it, we can see that we are now in `/home/oski/data`.
+`cd` doesn't print anything, but if we run `pwd` after it, we can see that we are now in `/home/mobaxterm/data`.
 
 If we run `ls` without arguments now, it lists the contents of `/home/oski/data`, because that's where we now are:
 
 ~~~ {.input}
-$ pwd
+> pwd
 ~~~
+
 ~~~ {.output}
-/home/oski/programming-fundametnals
+/home/mobaxterm/programming-fundametnals
 ~~~
+
 ~~~ {.input}
-$ ls -F
+> ls -F
 ~~~
+
 ~~~ {.output}
 0-0_Introduction.md	README.md		resource.md
 2-0_help.md		data/			test.R
@@ -273,36 +282,40 @@ LICENSE			day_one/
 We now know how to go down the directory tree: how do we go up? We could use an absolute path:
 
 ~~~ {.input}
-$ cd /home/oski/
+> cd /home/oski/
 ~~~
 
 but it's almost always simpler to use `cd ..` to go up one level:
 
 ~~~ {.input}
-$ pwd
+> pwd
 ~~~
+
 ~~~ {.output}
-/home/oski/data
+/home/mobaxterm/data
 ~~~
+
 ~~~ {.input}
-$ cd ..
+> cd ..
 ~~~
 
 `..` is a special directory name meaning "the directory containing this one",
 or more succinctly, the **parent** of the current directory. Sure enough, if we run `pwd` after running `cd ..`, we're back in `/home/oski/`:
 
 ~~~ {.input}
-$ pwd
+> pwd
 ~~~
+
 ~~~ {.output}
-/home/oski/
+/home/mobaxterm/
 ~~~
 
 The special directory `..` doesn't usually show up when we run `ls`. If we want to display it, we can give `ls` the `-a` flag:
 
 ~~~ {.input}
-$ ls -a
+> ls -a
 ~~~
+
 ~~~ {.output}
 .              .gnome                    .rstudio-desktop
 ..             .ICEauthority             setup_ipython_notebook.sh
@@ -321,7 +334,7 @@ file.txt       Public                    .xsession-errors
 .gitconfig     .Rhistory
 ~~~
 
-`-a` stands for "show all"; it forces `ls` to show us file and directory names that begin with `.`, such as `..` (which, if we're in `/home/oski`, refers to the `/users` directory).
+`-a` stands for "show all"; it forces `ls` to show us file and directory names that begin with `.`, such as `..` (which, if we're in `/home/mobaxterm`, refers to the `/users` directory).
 
 > #### Hidden Files: For Your Own Protection
 >
@@ -352,9 +365,10 @@ Everything Rochelle needs for her text project is in the `data` directory of the
 
 
 ~~~ {.input}
-$ cd ~/programming-fundamentals/data
-$ ls
+> cd ~/programming-fundamentals/data
+> ls
 ~~~
+
 ~~~ {.output}
 articles  downloads
 ~~~
@@ -362,9 +376,10 @@ articles  downloads
 Each of Rochelle's text files is labeled according to the parameters leading to her LexisNexis Search. Since she searched and downloaded articles containing the phrase 'human rights' for each year, she will call her files `human-rights-2001.txt`, `human-rights-2002.txt`, and so on. All files are in currently in the `downloads` directory.
 
 ~~~ {.input}
-$ cd downloads
-$ ls
+> cd downloads
+> ls
 ~~~
+
 ~~~ {.output}
 human-rights-2000.TXT  human-rights-2004.TXT  human-rights-2008.TXT
 human-rights-2001.TXT  human-rights-2005.TXT  human-rights-2009.TXT
@@ -375,20 +390,20 @@ human-rights-2003.TXT  human-rights-2007.TXT
 If she is in her home directory, Rochelle can see what files she has using the command:
 
 ~~~ {.input}
-$ cd ~
-$ ls programming-fundamentals/data/downloads
+> cd ~
+> ls programming-fundamentals/data/downloads
 ~~~
 
 This is a lot to type, but she can let the shell do most of the work. If she types:
 
 ~~~ {.input}
-$ ls prog
+> ls prog
 ~~~
 
 and then presses tab, the shell automatically completes the directory name for her:
 
 ~~~ {.input}
-$ ls programming-fundamentals/
+> ls programming-fundamentals/
 ~~~
 
 Pressing tab again does nothing, since there are multiple possibilities. Pressing tab twice brings up a list of all the files and directories, and so on.
@@ -408,7 +423,7 @@ This is the feature that ksh is missing. It's sad and you'll cry, but you're str
 
 #### Challenge 1
 
-If `pwd` displays `/home/oski/programming-fundamentals`, what will `ls ../documents` display?
+If `pwd` displays `/home/mobaxterm/programming-fundamentals`, what will `ls ../documents` display?
 
 1.  `../documents: No such file or directory`
 2.  `bce-help.desktop  Shared`
@@ -417,7 +432,7 @@ If `pwd` displays `/home/oski/programming-fundamentals`, what will `ls ../docume
 
 #### Challenge 2
 
-If `pwd` displays `/home/oski`, and `-r` tells `ls` to display things in reverse order, what command will display:
+If `pwd` displays `/home/mobaxterm`, and `-r` tells `ls` to display things in reverse order, what command will display:
 ~~~
 Videos/                     Public/                    Music/      Documents/
 Templates/                  programming-fundamentals/  file.txt    Desktop/
