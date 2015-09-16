@@ -19,7 +19,7 @@ Now that we know a few basic commands, we can finally look at the shell's most p
 We'll start with a directory called `data/articles` that contains text files of news articles. They are organized by the region they cover. So africa1.txt is the first article about Africa, africa2.txt the second and so on.
 
 ~~~ {.input}
-$ ls ~/programming-fundamentals/data/articles
+> ls ~/programming-fundamentals/data/articles
 ~~~
 
 Wow, that's a lot of files!
@@ -28,9 +28,10 @@ Let's go into that directory with `cd` and run the command `wc africa*.txt`.
 `wc` is the "word count" command: it counts the number of lines, words, and characters in files. Remember that the `*` in `africa*.txt` matches zero or more characters, so the shell turns `africa*.txt` into a complete list of `.txt` files that start with `africa`:
 
 ~~~ {.input}
-$ cd ~/programming-fundamentals/data/articles
-$ wc africa*.txt
+> cd ~/programming-fundamentals/data/articles
+> wc africa*.txt
 ~~~
+
 ~~~ {.output}
       ...
        1     101     608 africa95.txt
@@ -45,8 +46,9 @@ $ wc africa*.txt
 If we run `wc -l` instead of just `wc`, the output shows only the number of lines per file:
 
 ~~~ {.input}
-$ wc -l africa*.txt
+> wc -l africa*.txt
 ~~~
+
 ~~~ {.output}
       ...
        1 africa94.txt
@@ -69,7 +71,7 @@ Which of these files is shortest? It's an easy question to answer when there are
 Our first step toward a solution is to run the command:
 
 ~~~ {.input}
-$ wc -w africa*.txt > lengths
+> wc -w africa*.txt > lengths
 ~~~
 
 The `>` tells the shell to **redirect** the command's output to a file instead of printing it to the screen. The shell will create the file if it doesn't exist, or overwrite the contents of that file if it does.
@@ -77,8 +79,9 @@ The `>` tells the shell to **redirect** the command's output to a file instead o
 (This is why there is no screen output: everything that `wc` would have printed has gone into the file `lengths` instead.) `ls lengths` confirms that the file exists:
 
 ~~~ {.input}
-$ ls lengths
+> ls lengths
 ~~~
+
 ~~~ {.output}
 lengths
 ~~~
@@ -87,8 +90,9 @@ We can now send the content of `lengths` to the screen using `cat lengths`.
 `cat` stands for "concatenate": it prints the contents of files one after another. There's only one file in this case, so `cat` just shows us what it contains:
 
 ~~~ {.input}
-$ cat lengths
+> cat lengths
 ~~~
+
 ~~~ {.output}
     ...
    101 africa95.txt
@@ -104,8 +108,9 @@ $ cat lengths
 Now let's use the `sort` command to sort its contents. We will also use the -n flag to specify that the sort is  numerical instead of alphabetical. This does *not* change the file; instead, it sends the sorted result to the screen:
 
 ~~~ {.input}
-$ sort -n lengths
+> sort -n lengths
 ~~~
+
 ~~~ {.output}
    ...
   1143 africa134.txt
@@ -119,9 +124,10 @@ We can put the sorted list of lines in another temporary file called `sorted-len
 we can run another command called `head` to get the first few lines in `sorted-lengths`:
 
 ~~~ {.input}
-$ sort -n lengths > sorted-lengths
-$ head -1 sorted-lengths
+> sort -n lengths > sorted-lengths
+> head -1 sorted-lengths
 ~~~
+
 ~~~ {.output}
    70 africa49.txt
 ~~~
@@ -133,8 +139,9 @@ Using the parameter `-1` with `head` tells it that we only want the first line o
 If you think this is confusing, you're in good company: even once you understand what `wc`, `sort`, and `head` do, all those intermediate files make it hard to follow what's going on. We can make it easier to understand by running `sort` and `head` together:
 
 ~~~ {.input}
-$ sort -n lengths | head -1
+> sort -n lengths | head -1
 ~~~
+
 ~~~ {.output}
    70 africa49.txt
 ~~~
@@ -144,8 +151,9 @@ The vertical bar between the two commands is called a **pipe**. It tells the she
 We can use another pipe to send the output of `wc` directly to `sort`, which then sends its output to `head`:
 
 ~~~ {.input}
-$ wc -w africa*.txt | sort -n | head -1
+> wc -w africa*.txt | sort -n | head -1
 ~~~
+
 ~~~ {.output}
   70 africa49.txt
 ~~~
@@ -156,8 +164,9 @@ and saying "the log of three times *x*". In our case, the calculation is "head o
 We can use this logic in many different combinations. For instance, to see how many files are in this directory, we can command:
 
 ~~~ {.input}
-$ ls -1 | wc -l
+> ls -1 | wc -l
 ~~~
+
 ~~~ {.output}
   958
 ~~~
@@ -196,9 +205,10 @@ Rochelle has her bulk text downloads in the `new-york-times/2015-01-01` director
 As a quick sanity check, she types:
 
 ~~~ {.input}
-$ cd ~/programming-fundamentals/data/new-york-times/2015-01-01
-$ wc -l *.TXT
+> cd ~/programming-fundamentals/data/new-york-times/2015-01-01
+> wc -l *.TXT
 ~~~
+
 ~~~ {.output}
    63661 human-rights-2000.TXT
    56035 human-rights-2001.TXT
@@ -216,9 +226,10 @@ $ wc -l *.TXT
 Now she wants to concatenate (or merge) all of these text files into one big text file that she can later use to parse into a CSV.
 
 ~~~ {.input}
-$ cat *.TXT > all.TXT
-$ wc -l *.TXT
+> cat *.TXT > all.TXT
+> wc -l *.TXT
 ~~~
+
 ~~~ {.output}
   573673 all.TXT
    63661 human-rights-2000.TXT
