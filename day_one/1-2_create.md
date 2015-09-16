@@ -16,18 +16,21 @@ minutes: 15
 
 ### Creating Things
 
-We now know how to explore files and directories, but how do we create them in the first place? Let's go back to Rochelle's home directory, `/home/oski`,
+We now know how to explore files and directories, but how do we create them in the first place? Let's go back to Rochelle's home directory, `/home/mobaxterm`,
 and use `ls -F` to see what it contains:
 
 ~~~ {.input}
-$ pwd
+> pwd
 ~~~
+
 ~~~ {.output}
-/home/oski
+/home/mobaxterm
 ~~~
+
 ~~~ {.input}
-$ ls -F
+> ls -F
 ~~~
+
 ~~~ {.output}
 data/       Music/                     setup_ipython_notebook.sh*
 Desktop/    Pictures/                  Templates/
@@ -39,14 +42,15 @@ file.txt    R/
 Let's create a new directory called `thesis` using the command `mkdir thesis` (which has no output):
 
 ~~~ {.input}
-$ mkdir thesis
+> mkdir thesis
 ~~~
 
 As you might (or might not) guess from its name, `mkdir` means "make directory". Since `thesis` is a relative path (i.e., doesn't have a leading slash), the new directory is created in the current working directory:
 
 ~~~ {.input}
-$ ls -F
+> ls -F
 ~~~
+
 ~~~ {.output}
 data/       Music/                     setup_ipython_notebook.sh*
 Desktop/    Pictures/                  Templates/
@@ -58,7 +62,7 @@ file.txt    R/
 However, there's nothing in it yet:
 
 ~~~ {.input}
-$ ls -F thesis
+> ls -F thesis
 ~~~
 
 
@@ -67,8 +71,8 @@ $ ls -F thesis
 Let's change our working directory to `thesis` using `cd`, then run a text editor called Nano to create a file called `draft.txt`:
 
 ~~~ {.input}
-$ cd thesis
-$ nano draft.txt
+> cd thesis
+> nano draft.txt
 ~~~
 
 > #### Which Editor?
@@ -98,8 +102,9 @@ Let's type in a few lines of text, then use Control-O to write our data to disk:
 Once our file is saved, we can use Control-X to quit the editor and return to the shell. (Unix documentation often uses the shorthand `^A` to mean "control-A".) `nano` doesn't leave any output on the screen after it exits, but `ls` now shows that we have created a file called `draft.txt`:
 
 ~~~ {.input}
-$ ls
+> ls
 ~~~
+
 ~~~ {.output}
 draft.txt
 ~~~
@@ -109,13 +114,13 @@ draft.txt
 Let's tidy up by running `rm draft.txt`:
 
 ~~~ {.input}
-$ rm draft.txt
+> rm draft.txt
 ~~~
 
 This command removes files ("rm" is short for "remove"). If we run `ls` again,its output is empty once more, which tells us that our file is gone:
 
 ~~~ {.input}
-$ ls
+> ls
 ~~~
 
 > #### Deleting Is Forever
@@ -129,28 +134,33 @@ $ ls
 Let's re-create that file and then move up one directory to `/home/oski` using `cd ..`:
 
 ~~~ {.input}
-$ pwd
+> pwd
 ~~~
+
 ~~~ {.output}
-/home/oski/thesis
+/home/mobaxterm/thesis
 ~~~
+
 ~~~ {.input}
-$ nano draft.txt
-$ ls
+> nano draft.txt
+> ls
 ~~~
+
 ~~~ {.output}
 draft.txt
 ~~~
+
 ~~~ {.input}
-$ cd ..
+> cd ..
 ~~~
 
 If we try to remove the entire `thesis` directory using `rm thesis`,
 we get an error message:
 
 ~~~ {.input}
-$ rm thesis
+> rm thesis
 ~~~
+
 ~~~ {.error}
 rm: cannot remove `thesis': Is a directory
 ~~~
@@ -158,8 +168,9 @@ rm: cannot remove `thesis': Is a directory
 This happens because `rm` only works on files, not directories. The right command is `rmdir`, which is short for "remove directory". It doesn't work yet either, though, because the directory we're trying to remove isn't empty:
 
 ~~~ {.input}
-$ rmdir thesis
+> rmdir thesis
 ~~~
+
 ~~~ {.error}
 rmdir: failed to remove `thesis': Directory not empty
 ~~~
@@ -167,13 +178,13 @@ rmdir: failed to remove `thesis': Directory not empty
 This little safety feature can save you a lot of grief, particularly if you are a bad typist. To really get rid of `thesis` we must first delete the file `draft.txt`:
 
 ~~~ {.input}
-$ rm thesis/draft.txt
+> rm thesis/draft.txt
 ~~~
 
 The directory is now empty, so `rmdir` can delete it:
 
 ~~~ {.input}
-$ rmdir thesis
+> rmdir thesis
 ~~~
 
 > #### With Great Power Comes Great Responsibility
@@ -196,18 +207,22 @@ $ rmdir thesis
 Let's create that directory and file one more time. (Note that this time we're running `nano` with the path `thesis/draft.txt`, rather than going into the `thesis` directory and running `nano` on `draft.txt` there.)
 
 ~~~ {.input}
-$ pwd
+> pwd
 ~~~
+
 ~~~ {.output}
-/home/oski
+/home/mobaxterm
 ~~~
+
 ~~~ {.input}
-$ mkdir thesis
+> mkdir thesis
 ~~~
+
 ~~~ {.input}
-$ nano thesis/draft.txt
-$ ls thesis
+> nano thesis/draft.txt
+> ls thesis
 ~~~
+
 ~~~ {.output}
 draft.txt
 ~~~
@@ -215,14 +230,15 @@ draft.txt
 `draft.txt` isn't a particularly informative name, so let's change the file's name using `mv`, which is short for "move":
 
 ~~~ {.input}
-$ mv thesis/draft.txt thesis/quotes.txt
+> mv thesis/draft.txt thesis/quotes.txt
 ~~~
 
 The first parameter tells `mv` what we're "moving", while the second is where it's to go. In this case, we're moving `thesis/draft.txt` to `thesis/quotes.txt`, which has the same effect as renaming the file. Sure enough, `ls` shows us that `thesis` now contains one file called `quotes.txt`:
 
 ~~~ {.input}
-$ ls thesis
+> ls thesis
 ~~~
+
 ~~~ {.output}
 quotes.txt
 ~~~
@@ -232,20 +248,21 @@ Just for the sake of inconsistency, `mv` also works on directories -- there is n
 Let's move `quotes.txt` into the current working directory. We use `mv` once again, but this time we'll just use the name of a directory as the second parameter to tell `mv` that we want to keep the filename, but put the file somewhere new. (This is why the command is called "move".) In this case, the directory name we use is the special directory name `.` that we mentioned earlier.
 
 ~~~ {.input}
-$ mv thesis/quotes.txt .
+> mv thesis/quotes.txt .
 ~~~
 
 The effect is to move the file from the directory it was in to the current working directory. `ls` now shows us that `thesis` is empty:
 
 ~~~ {.input}
-$ ls thesis
+> ls thesis
 ~~~
 
 Further, `ls` with a filename or directory name as a parameter only lists that file or directory. We can use this to see that `quotes.txt` is still in our current directory:
 
 ~~~ {.input}
-$ ls quotes.txt
+> ls quotes.txt
 ~~~
+
 ~~~ {.output}
 quotes.txt
 ~~~
@@ -256,9 +273,10 @@ quotes.txt
 The `cp` command works very much like `mv`, except it copies a file instead of moving it. We can check that it did the right thing using `ls` with two paths as parameters --- like most Unix commands, `ls` can be given thousands of paths at once:
 
 ~~~ {.input}
-$ cp quotes.txt thesis/quotations.txt
-$ ls quotes.txt thesis/quotations.txt
+> cp quotes.txt thesis/quotations.txt
+> ls quotes.txt thesis/quotations.txt
 ~~~
+
 ~~~ {.output}
 quotes.txt   thesis/quotations.txt
 ~~~
@@ -266,8 +284,9 @@ quotes.txt   thesis/quotations.txt
 To prove that we made a copy, let's delete the `quotes.txt` file in the current directory and then run that same `ls` again. This time it tells us that it can't find `quotes.txt` in the current directory, but it does find the copy in `thesis` that we didn't delete:
 
 ~~~ {.input}
-$ ls quotes.txt thesis/quotations.txt
+> ls quotes.txt thesis/quotations.txt
 ~~~
+
 ~~~ {.error}
 ls: cannot access quotes.txt: No such file or directory thesis/quotations.txt
 ~~~
@@ -283,9 +302,9 @@ Knowing just this much about files and directories, Rochelle is ready to organiz
 > ('7').
 
 ~~~ {.input}
-$ cd ~/programming-fundamentals/data
-$ mkdir new-york-times
-$ mkdir new-york-times/2015-01-01
+> cd ~/programming-fundamentals/data
+> mkdir new-york-times
+> mkdir new-york-times/2015-01-01
 ~~~
 
 Now she's ready to add the text files that she downloaded from LexisNexis into the directory.
@@ -293,9 +312,10 @@ Now she's ready to add the text files that she downloaded from LexisNexis into t
 The text files that she downloaded are, unsurprisingly, in the directory `downloads`
 
 ~~~ {.input}
-$ cd downloads
-$ ls
+> cd downloads
+> ls
 ~~~
+
 ~~~ {.output}
 human-rights-2000.TXT  human-rights-2004.TXT  human-rights-2008.TXT
 human-rights-2001.TXT  human-rights-2005.TXT  human-rights-2009.TXT
@@ -306,9 +326,10 @@ human-rights-2003.TXT  human-rights-2007.TXT
 Rochelle wants to move them into the directory she just created.
 
 ~~~ {.input}
-$ cp human-rights-2000.TXT ../new-york-times/2015-01-01
-$ ls ../new-york-times/2015-01-01
+> cp human-rights-2000.TXT ../new-york-times/2015-01-01
+> ls ../new-york-times/2015-01-01
 ~~~
+
 ~~~ {.output}
 human-rights-2000.TXT
 ~~~
@@ -316,9 +337,10 @@ human-rights-2000.TXT
 Huzzah! But does Rochelle really have to time in a command for each file she wants to move? No, there's an easier way! Instead of giving an input for each file, Rochelle can write `cp *.TXT`.  The `*` in `*.TXT` matches zero or more characters, so the shell turns `*.TXT` into a complete list of `.TXT` files
 
 ~~~ {.input}
-$ cp *.TXT ../new-york-times/2015-01-01
-$ ls ../new-york-times/2015-01-01
+> cp *.TXT ../new-york-times/2015-01-01
+> ls ../new-york-times/2015-01-01
 ~~~
+
 ~~~ {.output}
 human-rights-2000.TXT  human-rights-2004.TXT  human-rights-2008.TXT
 human-rights-2001.TXT  human-rights-2005.TXT  human-rights-2009.TXT
