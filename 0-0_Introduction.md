@@ -71,6 +71,6 @@ The Day One lesson materials were created by [Rochelle Terman](https://github.co
 *   [Dav Clark](https://github.com/davclark)
 *   [Aaron Culich](https://github.com/aculich)
 
-The Day Two lesson materials were created by [Jack Burris](https://github.com/jackspaceBerkeley)
+The Day Two lesson materials were created by [Jack Burris](https://github.com/jackspaceBerkeley) and [Dillon Niederhut](https://github.com/deniederhut) for the D-Lab at UC Berkeley, and were modified by [Jack Burris](https://github.com/jackspaceBerkeley) for Cornerstone Research.
 
 The Day Three materials were created by [Dillon Niederhut](https://github.com/deniederhut) for the D-Lab at UC Berkeley, and were modified by [Dav Clark](https://github.com/davclark) for Cornerstone Research.
