@@ -1,161 +1,8 @@
-<div id="dw-regbar" class="dw-home-band" aria-labelledby="dw-regbar-vp" role="complementary">
-
-<div class="ibm-columns">
-
-<div class="ibm-col-6-6"><span id="dw-regbar-bluemix">IBM **Bluemix**</span> <span id="dw-regbar-vp">Develop in the cloud at the click of a button!</span>
-
-[Start your free trial](https://developer.ibm.com/sso/bmregistration)
-
-</div>
-
-</div>
-
-</div>
-
-<div id="ibm-top" class="ibm-landing-page">
-
-<div id="ibm-masthead">
-
-<div id="dw-masthead-top-row">
-
-*   [![dW](//dw1.s81c.com/developerworks/i/mf/dwn-dw-badge.png)](http://www.ibm.com/developerworks/)
-*   <div id="dw-mast-signin">[Sign in](# "Sign in requires JavaScript") <span class="dw-mf-signin-spacer">|</span> [Register](# "Register requires JavaScript")</div>
-
-    <div id="dw-mast-auth-link" class="dw-mf-hide">[](#)
-
-    *   developerWorks Community
-    *   <span class="dw-mast-auth-menu-arrow" aria-hidden="true">›</span>[My profile](/developerworks/community/profiles/html/myProfileView.do?lang=en)
-    *   <span class="dw-mast-auth-menu-arrow" aria-hidden="true">›</span>[My communities](/developerworks/community/groups/service/html/mycommunities?lang=en)
-    *   <span class="dw-mast-auth-menu-arrow" aria-hidden="true">›</span>[Settings](/developerworks/community/news/?lang=en)
-    *   * * *
-
-    *   <span class="dw-mast-auth-menu-arrow" aria-hidden="true">›</span>[Sign out](#)
-
-    </div>
-
-*   [IBM](http://www.ibm.com)
-
-</div>
-
-<div id="ibm-universal-nav-dw" aria-label="Site map">
-
-*   [![developerWorks®](//dw1.s81c.com/developerworks/i/mf/dwn-dw-wordmark.png)](http://www.ibm.com/developerworks/)
-
-*   [Technical topics](http://www.ibm.com/developerworks/topics/)
-*   [Evaluation software](http://www.ibm.com/developerworks/downloads/)
-*   [Community](http://www.ibm.com/developerworks/community/index.html)
-*   [Events](http://www.ibm.com/developerworks/events/)
-
-<form id="ibm-search-form" action="//www.ibm.com/search/csass/search/" method="get" name="form1" aria-label="IBM developerWorks Search" role="search">
-
-<label for="q"><span class="ibm-access">Search developerWorks</span></label><input id="q" type="text" name="q" value="Search developerWorks" maxlength="100"><input type="hidden" name="sn" value="dw"><input type="hidden" name="lang" value="en"><input type="hidden" name="cc" value="US"><input type="hidden" name="en" value="utf"><input type="hidden" name="hpp" value="20"><input type="hidden" name="dws" value="dw"><input id="ibm-search" class="ibm-btn-search" type="submit" value="Submit">
-
-</form>
-
-</div>
-
-</div>
-
-<div id="ibm-leadspace-head">
-
-<div id="ibm-leadspace-body">
-
-*   [developerWorks](http://www.ibm.com/developerworks/)
-*   [Technical topics](http://www.ibm.com/developerworks/topics/)
-*   [AIX and UNIX](http://www.ibm.com/developerworks/aix/)
-*   [Technical library](http://www.ibm.com/developerworks/aix/library/)
-
-# IBM AIX commands you should not leave home without
-
-</div>
-
-<div id="dw-summary-area" class="dw-summary-columns">
-
-<div class="ibm-col-6-4">
-
-Do you ever wish you could answer some of your own questions when you work with IBM AIX® and your IBM Power Systems™ server? Do you ever feel you could save time by not having to call on the support professionals all the time? Well, wish no more. Shiv Dutta discusses some of the AIX commands that answer those questions and tells you how to enlarge the list of such answers.
-
-[PDF](au-aix_cmds-pdf.pdf) (3873 KB) <span class="dw-summary-bar">|</span><span id="nCmts"></span>
-
-<div id="dw-social-tools-container"><span class="dw-social-lead-in">Share:</span></div>
-
-</div>
-
-<div class="ibm-col-6-2 dw-toc-margin">
-
-[Shiv Dutta](#authorN1002E) ([shiv_dutta@hotmail.com](mailto:shiv_dutta@hotmail.com?subject=IBM AIX commands you should not leave home without&cc=yokhaire@in.ibm.com)), Professional Writer
-
-<div id="authorN1002E" class="ibm-common-overlay">
-
-<div class="ibm-head">
-
-[Close [x]](#close)
-
-</div>
-
-<div class="ibm-body">
-
-<div class="ibm-main">
-
-<div class="ibm-container ibm-alternate">
-
-<div class="ibm-container-body">
-
-![Shiv Dutta](https://www.ibm.com/developerworks/i/authors/shiv_64x80.jpg)Shiv Dutta has worked extensively in the Power Systems and AIX area. He has authored many technical papers and nonfiction essays and is a co-author of a couple of IBM Redbooks® on AIX. Now, a professional writer, you can reach him through LinkedIn and Facebook.
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-04 April 2014
-
-Also available in [Chinese](http://www.ibm.com/developerworks/cn/aix/library/au-aix_cmds/) [Russian](http://www.ibm.com/developerworks/ru/library/au-aix_cmds/)
-
-<div aria-hidden="true" class="ibm-container" id="dw-toc">
-
-<div class="ibm-container-body">
-
-*   [![-](//www.ibm.com/i/c.gif)](#toggle)<span class="ibm-twisty-head">Table of contents</span>
-
-    <div class="ibm-twisty-body">
-
-    *   [Introduction](#1.Introduction|outline)
-    *   [Commands](#2.Commands|outline)
-    *   [Workload partitions](#3.Workload partitions|outline)
-    *   [Performance monitoring tools](#4.Performance monitoring tools|outline)
-    *   [Conclusion](#5.Conclusion|outline)
-    *   [Resources](#6.Resources|outline)
-    *   [Comments](#icomments)
-
-    </div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div id="ibm-pcon">
-
-<div id="ibm-content">
-
-<div id="ibm-content-body">
-
-<div id="ibm-content-main">
-
-<div class="ibm-columns">
-
-<div class="ibm-col-1-1">
+---
+title: Networked environments
+subtitle: Command line on AIX-UNIX
+minutes: 5
+---
 
 ## Introduction
 
@@ -219,7 +66,7 @@ In AIX V5.2, the 32-bit kernel is installed by default. In AIX V5.3, the 64-bit 
 
 **How do I know if my machine is capable of running AIX 5L Version 5.3?**
 
-AIX 5L Version 5.3 supports all 32- bit and 64-bit Common Hardware Reference Platform (CHRP)-based IBM Power® hardware. Only 64-bit CHRP systems are supported with AIX 6.1 and AIX V7.1.
+AIX 5L Version 5.3 supports all 32- bit and 64-bit Common Hardware Reference Platform (CHRP)-based IBM PowerÂ® hardware. Only 64-bit CHRP systems are supported with AIX 6.1 and AIX V7.1.
 
 **How do I know if my machine is CHRP-based?**
 
@@ -340,7 +187,7 @@ The `uname` command provides details about your system.
 
 | Command | Description |
 | --- | --- |
-| **uname -p** | Displays the chip type of the system. For example, IBM PowerPC®. |
+| **uname -p** | Displays the chip type of the system. For example, IBM PowerPCÂ®. |
 | **uname -r** | Displays the release number of the operating system. |
 | **uname -s** | Displays the system name. For example, AIX. |
 | **uname -n** | Displays the name of the node. |
@@ -636,7 +483,7 @@ To remount the mounted read-only JFS2 file system to a read-write file system, e
 
 <div class="codesection">
 
-<pre class="displaycode">mount –o remount,rw fsname</pre>
+<pre class="displaycode">mount Â–o remount,rw fsname</pre>
 
 </div>
 
@@ -1057,7 +904,7 @@ To get default LPAR statistics with summary statistics on Hypervisor, enter the 
 
 <div class="codesection">
 
-<pre class="displaycode">lparstat –h 1 1</pre>
+<pre class="displaycode">lparstat Â–h 1 1</pre>
 
 </div>
 
@@ -1073,7 +920,7 @@ To get detailed hypervisor statistics, enter the following command:
 
 <div class="codesection">
 
-<pre class="displaycode">lparstat –H 1 1</pre>
+<pre class="displaycode">lparstat Â–H 1 1</pre>
 
 </div>
 
@@ -1081,7 +928,7 @@ To get statistics about the shared memory pool and the I/O memory entitlement of
 
 <div class="codesection">
 
-<pre class="displaycode">lparstat –m</pre>
+<pre class="displaycode">lparstat Â–m</pre>
 
 </div>
 
@@ -1372,7 +1219,7 @@ To synchronize the copies on volume groups `vg04` and `vg05`, enter:
 **How do I replace a disk?**
 
 1.  `extendvg`_ `VolumeGroupName hdisk_new`_
-2.  `migratepv`_ `hdisk_bad hdisk_new`_
+2.  `migratepv`_ `hdisk_badÂ hdisk_new`_
 3.  `reducevg -d` _`VolumeGroupName hdisk_bad`_
 
 The command `migratepv` moves allocated physical partitions from one physical volume to one or more other physical volumes.
@@ -1987,300 +1834,4 @@ Admittedly, a list such as this can be helpful in quickly answering some of your
     *   More [AIX and UNIX Forums](https://www.ibm.com/developerworks/forums/dw_auforums.jsp)
     *   [AIX Networking](https://www.ibm.com/developerworks/forums/forum.jspa?forumID=1333)
 
-</div>
-
-</div>
-
-<div class="ibm-columns">
-
-<div class="ibm-col-6-4">
-
-## Comments
-
-<div class="ibm-common-overlay" id="signin_overlay">
-
-<div class="ibm-head">
-
-[Close [x]](#)
-
-</div>
-
-<div class="ibm-body">
-
-<div class="ibm-main">
-
-<div class="ibm-title">
-
-## developerWorks: Sign in
-
-</div>
-
-<div class="ibm-container ibm-alternate ibm-buttons-last">
-
-<div class="ibm-container-body">
-
-Required fields are indicated with an asterisk (<span class="ibm-required">*</span>).
-
-<form class="ibm-column-form" id="sFormId" action="" method="post" name="sForm" onsubmit="return false;">
-
-<label for="ibmid">IBM ID:<span class="ibm-required">*</span></label><span><input name="ibm-id" id="ibmid" size="25" value="" class="required" type="text" onkeypress="dwsi.siInst.handleEP(event,this.form);">
-[Need an IBM ID?](#) 
-[Forgot your IBM ID?](/developerworks/dwwi/jsp/WSHelp.jsp?lang=en_US)</span>
-
-<label for="password">Password:<span class="ibm-required">*</span></label><span><input name="password" id="password" size="25" value="" class="required" type="password" onkeypress="dwsi.siInst.handleEP(event,this.form);">
-[Forgot your password?](#)
-[Change your password](#)</span>
-
-<span><input id="perm" type="checkbox" name="perm_name"><label for="perm">Keep me signed in.</label></span>
-
-By clicking **Submit**, you agree to the [developerWorks terms of use](https://www.ibm.com/developerworks/community/terms/).
-
-<div class="ibm-buttons-row">
-
-<input class="ibm-btn-arrow-pri" name="ibm-submit" value="Submit" onclick="dwsi.siInst.signin();return false;" type="submit"><span class="ibm-sep"> </span><input value="Cancel" type="button" name="ibm-cancel" class="ibm-btn-cancel-sec" onclick="dwsi.siInst.clearForm();ibmweb.overlay.hide('signin_overlay');return false;">
-
-</div>
-
-</form>
-
-<div class="ibm-overlay-rule">
-
-* * *
-
-</div>
-
-The first time you sign into developerWorks, a profile is created for you. **Information in your profile (your name, country/region, and company name) is displayed to the public and will accompany any content you post, unless you opt to hide your company name**. You may update your IBM account at any time.
-
-<div>
-
-All information submitted is secure.
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="ibm-common-overlay" id="displayname_overlay">
-
-<div class="ibm-head">
-
-[Close [x]](#)
-
-</div>
-
-<div class="ibm-body">
-
-<div class="ibm-main">
-
-<div class="ibm-title">
-
-## Choose your display name
-
-</div>
-
-<div class="ibm-container ibm-alternate ibm-buttons-last">
-
-<div class="ibm-container-body">
-
-The first time you sign in to developerWorks, a profile is created for you, so you need to choose a display name. Your display name accompanies the content you post on developerWorks.
-
-**Please choose a display name between 3-31 characters**. Your display name must be unique in the developerWorks community and should not be your email address for privacy reasons.
-
-Required fields are indicated with an asterisk (<span class="ibm-required">*</span>).
-
-<form id="dFormId" method="post" action="" name="dForm" onsubmit="return false;" class="ibm-column-form">
-
-<label for="displayname">Display name:<span class="ibm-required">*</span></label><span><input name="displayname" id="displayname" size="25" value="" type="text" onkeypress="dwsi.siInst.handleEP(event,this.form);"></span><span class="ibm-form-note">(Must be between 3 – 31 characters.)</span>
-
-By clicking **Submit**, you agree to the [developerWorks terms of use](https://www.ibm.com/developerworks/community/terms/).
-
-<div class="ibm-buttons-row">
-
-<input class="ibm-btn-arrow-pri" name="ibm-submit" value="Submit" onclick="dwsi.siInst.signin();return false;" type="submit"><span class="ibm-sep"> </span><input value="Cancel" type="button" name="ibm-cancel" class="ibm-btn-cancel-sec" onclick="dwsi.siInst.clearForm();ibmweb.overlay.hide('displayname_overlay');return false;">
-
-</div>
-
-</form>
-
-<div class="ibm-overlay-rule">
-
-* * *
-
-</div>
-
-<div>
-
-All information submitted is secure.
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="ibm-col-6-2">
-
-## Dig deeper into AIX and Unix on developerWorks
-
-*   [Overview](http://www.ibm.com/developerworks/aix/)
-*   [New to AIX and Unix](http://www.ibm.com/developerworks/aix/newto/)
-*   [Technical library (tutorials and more)](http://www.ibm.com/developerworks/aix/library/)
-*   [Forums](https://www.ibm.com/developerworks/community/forums/html/category?id=33333333-0000-0000-0000-000000000072)
-*   [Community](http://www.ibm.com/developerworks/aix/community/)
-*   [Downloads and products](http://www.ibm.com/developerworks/aix/find/downloads/)
-*   [Open source projects](http://www.ibm.com/developerworks/aix/find/projects/)
-*   [Events](http://www.ibm.com/developerworks/aix/find/events/)
-
-<div class="ibm-alternate-rule">
-
-* * *
-
-</div>
-
-*   ![](//dw1.s81c.com/developerworks/i/sm-f-bluemixdev60.png)
-
-    ### [Bluemix Developers Community](https://developer.ibm.com/bluemix/)
-
-    Get samples, articles, product docs, and community resources to help build, deploy, and manage your cloud apps.
-
-*   ![](//www.ibm.com/developerworks/i/sm-f-dwnewsletters60.png)
-
-    ### [developerWorks Weekly Newsletter](http://ibmdeveloperworks.mkt6741.com/dWdWWeeklyNewsletterSubscriptionPage/)
-
-    Keep up with the best and latest technical info to help you tackle your development challenges.
-
-*   ![](//www.ibm.com/developerworks/i/sm-f-jazzhub2.png)
-
-    ### [DevOps Services](https://hub.jazz.net/?utm_source=developerWorks&utm_medium=ad&utm_campaign=dW+tiny+ad)
-
-    Software development in the cloud. Register today to create a project.
-
-*   ![](//www.ibm.com/developerworks/i/sm-f-evaluationsoftware60.png)
-
-    ### [IBM evaluation software](http://www.ibm.com/developerworks/downloads/?ca=dti-tiles-evaluate)
-
-    Evaluate IBM software and solutions, and transform challenges into opportunities.
-
-</div>
-
-</div>
-
-<div class="ibm-columns">
-
-<div class="ibm-col-1-1">
-
-<div class="ibm-alternate-rule">
-
-* * *
-
-</div>
-
-[Back to top](#ibm-content)
-
-</div>
-
-</div>
-
-<div class="metavalue">static.content.url=http://www.ibm.com/developerworks/js/artrating/</div>
-
-<div class="metavalue">SITE_ID=1</div>
-
-<div class="metavalue">Zone=AIX and UNIX</div>
-
-<div class="metavalue">ArticleID=345669</div>
-
-<div class="metavalue">ArticleTitle=IBM AIX commands you should not leave home without</div>
-
-<div class="metavalue">publish-date=04042014</div>
-
-<script language="javascript" type="text/javascript">document.write('<div class="metavalue">url='+location.href.replace(/</g, '%3C')+'</div>');</script></div>
-
-</div>
-
-</div>
-
-</div>
-
-<div id="ibm-footer-module-dwwrapper" role="contentinfo" aria-label="developerWorks Footer">
-
-<div id="ibm-footer-module-dw">
-
-<div class="dw-footer-columns">
-
-<div class="dw-footer-col-6-1">
-
-*   [About](http://www.ibm.com/developerworks/aboutdw/)
-*   [Help](https://www.ibm.com/developerworks/feedback)
-*   [Contact us](http://www.ibm.com/developerworks/aboutdw/contacts.html)
-*   [Submit content](https://www.ibm.com/developerworks/ideas)
-
-</div>
-
-<div class="dw-footer-col-6-2">
-
-*   [Feeds](http://www.ibm.com/developerworks/feeds/)
-*   [Newsletters](http://www.ibm.com/developerworks/newsletter/)
-*   [Follow](http://twitter.com/developerWorks)
-*   [Like](http://www.facebook.com/developerworks)
-
-</div>
-
-<div class="dw-footer-col-6-3">
-
-*   [Report abuse](https://www.ibm.com/developerworks/community/report/)
-*   [Terms of use](https://www.ibm.com/developerworks/community/terms/use/)
-*   [Third party notice](https://www.ibm.com/developerworks/community/terms/thirdparty/)
-*   [IBM privacy](http://www.ibm.com/privacy/)
-*   [IBM accessibility](http://www.ibm.com/accessibility/)
-
-</div>
-
-<div class="dw-footer-col-6-4">
-
-*   [Faculty](http://www.ibm.com/ibm/university/academic/pub/page/academic_initiative)
-*   [Students](http://asmarterplanet.com/studentsfor/)
-*   [Business Partners](http://www.ibm.com/isv/)
-
-</div>
-
-<div class="dw-footer-col-6-5">
-
-*   Select a language:
-*   [English](http://www.ibm.com/developerworks/)
-*   [??](http://www.ibm.com/developerworks/cn/)
-*   [???](http://www.ibm.com/developerworks/jp/)
-*   [???????](http://www.ibm.com/developerworks/ru/)
-*   [Português (Brasil)](http://www.ibm.com/developerworks/br/)
-*   [Español](http://www.ibm.com/developerworks/ssa/)
-*   [Vi?t](http://www.ibm.com/developerworks/vn/)
-
-</div>
-
-<div class="dw-footer-col-6-6">![IBM®](//dw1.s81c.com/developerworks/i/mf/dwn-ibm-logo-v17.png)![](//1.www.s81c.com/i/v17/icons/ibm_sprite_social_blue_ON.png)![](//dw1.s81c.com/developerworks/i/mf/arrow-down-active.gif)</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<script type="text/javascript" src="/developerworks/js/v17/dw-comments.js">//</script> <script type="text/javascript" language="JavaScript">dojo.ready(function(){ rBHash = typeof rBHash == "undefined" ? {} : rBHash; rBHash['viperLang'] = 'en'; rBHash['urlLang'] = 'en'; rBHash['dwwi2Lang'] = 'en_US'; rBHash['appCode'] = 'dwmav'; rBHash['signoutUrl'] = (location.host.toLowerCase() === "www.ibm.com" || location.host.toLowerCase() === "developer.ibm.com") ? 'http://www.ibm.com/developerworks/' : ''; dwsi.siInst = new dwweb.dynnav.dwsi(); dwsi.siInst.initSI(); // construct the comment widget dwc && new dwc.comments('threadShow','95%',5,'nCmts','icomments'); });</script> <script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-41146412-3','auto');ga('require','linkid','linkid.js');var dcdate="2014-04-04";ga('set','dimension1',dcdate);var dw_canonical="http://www.ibm.com/developerworks/aix/library/au-aix_cmds/index.html";dw_canonical=dw_canonical.substring(dw_canonical.indexOf(".ibm.com")+8);ga('send','pageview',{'page':dw_canonical,'dimension1':dcdate});var trkOBL=function(url,id){id=id.split("-");if(id[0].indexOf("Share")>-1){var cat="Share from toolbar";if(id[0]=="dwShare")cat="Share from summary";var act="Color toolbar";if(id[1]=="B")act="Gray toolbar";var label=id[2];var ab=0;ga('send','event',cat,act,label,ab,{'page':dw_canonical});if(id[0]=="dwShare"){url=unescape(url);if(label='twitter'&&url.indexOf("%2F%2Fwww.ibm.com%2Fdeveloperworks%2F")>-1){var ohref=url.substring(url.indexOf("=http")+1,url.indexOf(".html")+5);ohref=unescape(ohref);var bitly=new ibmweb.bitly({url:ohref,onSuccess:function(){url=url.replace(/http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2F(.*)%20-%20/,this.shorturl+'%20-%20');window.open(url)}});bitly.shorten()}else{window.open(url)}}}else{var cat="Rich tutorial";if(id[0]=="tutc")cat="Classic tutorial";if(id[0]=="lpzone")cat="Zone landing";if(id[0]=="lptrial")cat="Trial landing";if(id[0]=="lpgen")cat="Generic landing";var act="Bluemix";if(id[2]=="devops")act="Devops";if(id[2]=="ask")act="Ask";if(id[2]=="dwopen")act="dW_Open";act=act+' '+id[3];if(id[4]){var label=id[4];if(label=="btn")label="button";if(label=="txt")label="text link";if(label=="bnr")label="banner";if(label=="tl")label="tile";if(label=="regbar")label="registration bar";if(label=="spop")label="scroll pop";if(label=="vp")label="video promotion"}var ab=0;if(id[5]){if(id[5]=="ABa")ab=1;if(id[5]=="ABb")ab=2;if(id[5]=="ABc")ab=3;if(id[5]=="ABd")ab=4;if(id[5]=="ABe")ab=5;if(id[5]=="ABf")ab=6;if(id[5]=="ABg")ab=7;if(id[5]=="ABh")ab=8}ga('send','event',cat,act,label,ab,{'page':dw_canonical,'hitCallback':function(){document.location=url}})}}</script> <script type="text/javascript" src="/developerworks/js/v17/dw-event-tagging.js">//</script> <script language="JavaScript">var NTPT_PGEXTRA="ibmSkillLevel=1&ibmCmaId=345669&ibmContentAreas=aix";</script>
-
-<div id="ibm-metrics"><script src="//dw1.s81c.com/common/stats/stats.js" type="text/javascript">//</script></div>
+Adapted from [IBMdeveloperWorks - IBM AIX commands you should not leave home without](https://www.ibm.com/developerworks/aix/library/au-aix_cmds/)

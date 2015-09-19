@@ -1,6 +1,6 @@
 ---
-title: Unix Permissions
-subtitle: Introducing Unix Permissions
+title: Networked Environments
+subtitle: Unix Permissions
 minutes: 5
 ---
 
