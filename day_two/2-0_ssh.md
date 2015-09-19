@@ -437,3 +437,7 @@ $ ssh vlad@comet "chmod go-r ~/.ssh/authorized_keys ; ls -l ~/.ssh"
 > *  SSH is a secure alternative to username/password authorization
 > *  SSH keys are generated in public/private pairs. Your public key can be shared with others. The private keys stays on your machine only.
 > *  The 'ssh' and 'scp' utilities are secure alternatives to logging into, and copying files to/from remote machine
+
+---
+
+Adapted from [Software Carpentry](https://github.com/swcarpentry/shell-extras)

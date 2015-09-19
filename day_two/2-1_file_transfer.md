@@ -153,3 +153,7 @@ $ lftp -c mget http://swcarpentry.github.io/shell-extras/*.html
 ~~~
 
 Please refer to the man page by typing `man lftp` in the shell for more information.
+
+---
+
+Adapted from [Software Carpentry](https://github.com/swcarpentry/shell-extras)
