@@ -8,9 +8,13 @@ minutes: 5
 
 ## Notepad++ won't help you here
 
-In a shared server setting, managing hundreds of graphical user login sessions is a lot of overhead that could be spend on computation instead. That's okay though - unless you are processing images, a windowed (not Windows) environment is not really necessary.
+In a shared server setting, managing hundreds of graphical user login sessions
+is a lot of overhead that could be spend on computation instead. That's okay
+though - unless you are processing images, a windowed (not Windows) environment
+is not really necessary.
 
-However, this means we need a way to edit files that exists in a terminal, using a program like `Vi`. There is good news and bad news about this.
+However, this means we need a way to edit files that exists in a terminal,
+using a program like `Vi`. There is good news and bad news about this.
 
 ## The good news
 
@@ -20,23 +24,35 @@ However, this means we need a way to edit files that exists in a terminal, using
 
 2. Vi is customizable
 
-    The auto-linting, tab-completion, and syntax highlighting that you love about your favorite IDE all started in Vi
+    The auto-linting (style and error checking), tab-completion, and syntax
+    highlighting that you love about your favorite IDE all started in Vi
 
 3. Vi is fast
 
-    Your hands never need to leave the keyboard in Vi, and complex tasks like cutting three lines of code and moving them to beginning of the last line in the document is **only five** keystrokes
+    Your hands never need to leave the keyboard in Vi, and complex tasks like
+    cutting three lines of code and moving them to beginning of the last line
+    in the document is **only five** keystrokes
 
 ## The bad news
 
 1. Vi has a very steep learning curve
 
-For example, the first thing that happens when you enter the Vi text editor is that you are unable to type.
+    For example, the first thing that happens when you enter the Vi text editor
+    is that you are unable to type.
 
 ## This is counterintuitive
 
-But there is a logic behind it. Most of what you do in a text editor is not inserting text character by character (also called typing). It's a lot of cutting and pasting, and moving things around. These take a long time in windowed text editors but you have to move your hands, search through the document, click and drag, right click, select cut, search through the document again, right click again, and select paste. Vi (and other terminal editors) have put all kinds of useful functions like this in other `modes`, like `command` and `ex`. If you want to type, you need to go into `insert mode`.
+But there is a logic behind it. Most of what you do in a text editor is not
+inserting text character by character (also called typing). It's a lot of
+cutting and pasting, and moving things around. These take a long time in
+windowed text editors but you have to move your hands, search through the
+document, click and drag, right click, select cut, search through the document
+again, right click again, and select paste. Vi (and other terminal editors)
+have put all kinds of useful functions like this in other `modes`, like
+`command` and `ex`. If you want to type, you need to go into `insert mode`.
 
-Another way to think about this is that your windowed text editor is like a Vi that you can't command because it is permanently stuck in `insert mode`.
+Another way to think about this is that your windowed text editor is like a Vi
+that you can't command because it is permanently stuck in `insert mode`.
 
 # A brief guide to Vi
 
@@ -68,7 +84,9 @@ You should see something like this:
 
 ## Quitting the editor
 
-Because Vi is the defualt terminal editor on most systems, you'll frequently find yourself in a situation where you need to quit Vi, even if you don't know how to use/quit Vi.
+Because Vi is the defualt terminal editor on most systems, you'll frequently
+find yourself in a situation where you need to quit Vi, even if you don't know
+how to use/quit Vi.
 
 If you take nothing else from this lesson, remember that you quit Vi with:
 
@@ -90,19 +108,25 @@ To enter `insert mode`, use:
 i
 ~~~
 
-Now Vi is the kind of text editor you are used to. Use the keys to enter text, <enter> to start a new line, etc. Try entering a few lines of code, just for fun.
+Now Vi is the kind of text editor you are used to. Use the keys to enter text,
+<enter> to start a new line, etc. Try entering a few lines of code, just for
+fun.
 
-In Vi, you'll spend most of your time in command mode. To get back, simply hit the `ESC` key.
+In Vi, you'll spend most of your time in command mode. To get back, simply hit
+the `ESC` key.
 
 ## Writing to disk
 
-When you enter text in Vi, it exists in a buffer in memory. If you rage-quit Vi, you'll lose all the work you've done. To move your work from memory into disk, make sure you are in command mode, and then type:
+When you enter text in Vi, it exists in a buffer in memory. If you rage-quit
+Vi, you'll lose all the work you've done. To move your work from memory into
+disk, make sure you are in command mode, and then type:
 
 ~~~{ .input}
 :w <filename><enter>
 ~~~
 
-The `:` puts you in `ex` mode, where you can do things like write to disk and quit the editor.
+The `:` puts you in `ex` mode, where you can do things like write to disk and
+quit the editor.
 
 You should see something like:
 
@@ -122,7 +146,16 @@ vi day_one/1-0_shell.md
 
 This is the day one lesson on how to use the shell.
 
-To move the cursor one space in any direction, use the keys `h`,`j`,`k`, and `l`. We'll let you figure out how each one moves the cursor.
+To move the cursor one space in any direction, use the keys `h`,`j`,`k`, and
+`l`. We'll let you figure out how each one moves the cursor. Or, if you prefer
+to read, you can always invoke the following:
+
+~~~{ .input}
+:h<enter>
+~~~
+
+This is short for `:help`, and will tell you what a bare `h` does (in command
+mode) in addition to how to close the help window!
 
 ## Deleting Things
 
@@ -135,7 +168,9 @@ In `command mode`, there are two ways to delete text.
 
 ## Challenge 1
 
-Look at the yaml header of this file. It says that the lesson takes 5 minutes. How would you delete that line in command mode? What if you didn't want that key:value pair to show up at all?
+Look at the yaml header of this file. It says that the lesson takes 5 minutes.
+How would you delete that line in command mode? What if you didn't want that
+key:value pair to show up at all?
 
 ## Dancing around words in Vi
 
@@ -148,7 +183,9 @@ What makes Vi really cool is the commands for navigating to specific parts of a 
 
 Try these out in your terminal. How does Vi define *word*?
 
-By anything that isn't a `[a-zA-z]`! This means that punctuation counts as a separate word. To include puncts in words, use capped versions of those commands. E.g. `W` gets you to the next word+punct, like an entire URL.
+By anything that isn't a `[a-zA-z]`! This means that punctuation counts as a
+separate word. To include puncts in words, use capped versions of those
+commands. E.g. `W` gets you to the next word+punct, like an entire URL.
 
 ## Dancing around documents in Vi
 
