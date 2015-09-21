@@ -174,7 +174,8 @@ key:value pair to show up at all?
 
 ## Dancing around words in Vi
 
-What makes Vi really cool is the commands for navigating to specific parts of a line
+What makes Vi really cool is the commands for navigating to specific parts of a
+line
 
 * To get to the start of a line, use `0`. `$` is the end of the line.
 * `w` gets you to the first char of the next word
@@ -218,7 +219,8 @@ d{
 
 ## Challenge 2
 
-How would you jump to line 98, and delete the second sentence?  What about the image link at the start of the document?
+How would you jump to line 98, and delete the second sentence?  What about the
+image link at the start of the document?
 
 ---
 

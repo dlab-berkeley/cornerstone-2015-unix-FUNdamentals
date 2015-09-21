@@ -190,18 +190,25 @@ You can change the owner of a file by using the chown command. Here's an example
 
 Notice that in order to change the owner of a file, you must be the superuser.
 To do this, our example employed the su command, then we executed chown, and
-finally we typed exit to return to our previous session.
+finally we typed exit to return to our previous session. *If you lack superuser
+permissions, you'll need to ask someone to do this for you.*
 
 chown works the same way on directories as it does on files.
 
 ## Changing Group Ownership
 
-The group ownership of a file or directory may be changed with chgrp. This command is used like this:
+The group ownership of a file or directory may be changed with chgrp. This
+command is used like this:
 
     [me@linuxbox me]$ chgrp new_group some_file
 
-In the example above, we changed the group ownership of some_file from its previous group to "new_group". You must be the owner of the file or directory to perform a chgrp.
+In the example above, we changed the group ownership of some_file from its
+previous group to "new_group". You must be the owner of the file or directory
+to perform a chgrp.
 ---
 Adapted from [Linuxcommand.org](http://linuxcommand.org/lc3_lts0090.php)
 
-© 2000-2015, William E. Shotts, Jr. Verbatim copying and distribution of this entire article is permitted in any medium, provided this copyright notice is preserved.
+© 2000-2015, William E. Shotts, Jr. Verbatim copying and distribution of this
+entire article is permitted in any medium, provided this copyright notice is
+preserved. Italicised text above added by Dav Clark, to provide annotations
+relevant to Cornerstone.
