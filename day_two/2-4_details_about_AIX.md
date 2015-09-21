@@ -1,18 +1,34 @@
 ---
-title: Networked environments
-subtitle: Command line on AIX-UNIX
+title: Details about your AIX Environment
+subtitle: Unique commands and accessing GUIs
 minutes: 5
 ---
 
 ## Introduction
 
-As you know, AIX has a vast array of commands that enable you to do a multitude
-of tasks. Depending on what you need to accomplish, you use only a certain
-subset of these commands. These subsets differ from user to user and from need
-to need.
+AIX has a vast array of commands that enable you to do a multitude of tasks.
+Depending on what you need to accomplish, you use only a certain subset of
+these commands. While many commands will be familiar (or identical) from a
+GNU/Linux environment, there are important differences (we already encountered
+one at the beginning of our config file lesson).
 
-While many commands will be familiar (or identical) from a GNU/Linux
-environment, there are important differences.
+Another important feature of connecting to the Cornerstone AIX machine is that
+you can access it not only through the command line, but also using X Windows
+to enable graphical applications, and SAS Studio will allow connecting for SAS
+workflows via a web browser.
+
+## Using a GUI
+
+For those of you who are terrified about whether you really need to use Vi,
+note that you actually have access to graphical editors via MobaXterm as well.
+
+To see this in action, choose a file and type `vs <filename>`.
+
+## Getting details about the AIX system
+
+Sometimes you might be curious what's going on with the system resources. This
+can be a quick sanity check to figure out if it's your code or the machine
+that's causing a slowdown.
 
 ### How many processors does my system have?
 
