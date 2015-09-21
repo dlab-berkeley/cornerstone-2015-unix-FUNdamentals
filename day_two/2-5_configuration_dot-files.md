@@ -25,3 +25,5 @@ command line!).
 You could also override the global `ll` alias (`alias ll='ls -ltarhF
 --time-style=locale'`) with something more to your liking.
 
+We'll come back to some specific configuration items tomorrow when we focus on
+Git.
