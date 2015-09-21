@@ -61,7 +61,6 @@ directory:
 ~~~ {.input}
 [me@linuxbox me]$ ls -l /bin/bash
 
-
 -rwxr-xr-x 1 root root  316848 Feb 27  2000 /bin/bash
 ~~~
 
@@ -113,58 +112,33 @@ Here is a table of numbers that covers all the common settings. The ones
 beginning with "7" are used with programs (since they enable execution) and the
 rest are for other kinds of files.
 
-Value	Meaning
-777
-
-(rwxrwxrwx) No restrictions on permissions. Anybody may do anything. Generally not a desirable setting.
-
-755
-
-(rwxr-xr-x) The file's owner may read, write, and execute the file. All others may read and execute the file. This setting is common for programs that are used by all users.
-
-700
-
-(rwx------) The file's owner may read, write, and execute the file. Nobody else has any rights. This setting is useful for programs that only the owner may use and must be kept private from others.
-
-666
-
-(rw-rw-rw-) All users may read and write the file.
-
-644
-
-(rw-r--r--) The owner may read and write a file, while all others may only read the file. A common setting for data files that everybody may read, but only the owner may change.
-
-600
-
-(rw-------) The owner may read and write a file. All others have no rights. A common setting for data files that the owner wants to keep private.
+Value | Displayed | Meaning
+----- | --------- | -------
+777   | rwxrwxrwx | No restrictions on permissions. Anybody may do anything. Generally not a desirable setting.
+755   | rwxr-xr-x | The file's owner may read, write, and execute the file. All others may read and execute the file. This setting is common for programs that are used by all users.
+700   | rwx------ | The file's owner may read, write, and execute the file. Nobody else has any rights. This setting is useful for programs that only the owner may use and must be kept private from others.
+666   | rw-rw-rw- | All users may read and write the file.
+644   | rw-r--r-- | The owner may read and write a file, while all others may only read the file. A common setting for data files that everybody may read, but only the owner may change.
+600   | rw------- | The owner may read and write a file. All others have no rights. A common setting for data files that the owner wants to keep private.
 
 ## Directory Permissions
 
-The chmod command can also be used to control the access permissions for directories. Again, we can use the octal notation to set permissions, but the meaning of the r, w, and x attributes is different:
+The chmod command can also be used to control the access permissions for
+directories. Again, we can use the octal notation to set permissions, but the
+meaning of the `r`, `w`, and `x` attributes is different:
 
-r - Allows the contents of the directory to be listed if the x attribute is also set.
-w - Allows files within the directory to be created, deleted, or renamed if the x attribute is also set.
-x - Allows a directory to be entered (i.e. cd dir).
-Here are some useful settings for directories:
+- `r` allows the contents of the directory to be listed if the x attribute is
+  also set.
+- `w` allows files within the directory to be created, deleted, or renamed if
+  the x attribute is also set.
+- `x` allows a directory to be entered (i.e. cd dir).  Here are some useful
+  settings for directories:
 
-Value	Meaning
-777
-
-(rwxrwxrwx) No restrictions on permissions. Anybody may list files, create new
-files in the directory and delete files in the directory. Generally not a good
-setting.
-
-755
-
-(rwxr-xr-x) The directory owner has full access. All others may list the
-directory, but cannot create files nor delete them. This setting is common for
-directories that you wish to share with other users.
-
-700
-
-(rwx------) The directory owner has full access. Nobody else has any rights.
-This setting is useful for directories that only the owner may use and must be
-kept private from others.
+Value | Displayed | Meaning
+----- | --------- | -------
+777   | rwxrwxrwx | No restrictions on permissions. Anybody may list files, create new files in the directory and delete files in the directory. Generally not a good setting.
+755   | rwxr-xr-x | The directory owner has full access. All others may list the directory, but cannot create files nor delete them. This setting is common for directories that you wish to share with other users.
+700   | rwx------ | The directory owner has full access. Nobody else has any rights.  This setting is useful for directories that only the owner may use and must be kept private from others.
 
 ## Becoming The Superuser For A Short While
 
@@ -181,19 +155,24 @@ the su command. You will be prompted for the superuser's password:
     [root@linuxbox me]#
 
 After executing the su command, you have a new shell session as the superuser.
-To exit the superuser session, type exit and you will return to your previous
-session.
+The shell prompt will usually change from something like `$` to something like
+`#` to let you know you are flying without a net! To exit the superuser
+session, type exit and you will return to your previous session.
 
-In some distributions, most notably Ubuntu, an alternate method is used. Rather
-than using su, these systems employ the sudo command instead. With sudo, one or
-more users are granted superuser privileges on an as needed basis. To execute a
-command as the superuser, the desired command is simply preceeded with the sudo
-command. After the command is entered, the user is prompted for the user's
-password rather than the superuser's:
+In some distributions, most notably Ubuntu, an alternate method is preferred.
+Rather than using su, these systems employ the sudo command instead. With sudo,
+one or more users are granted superuser privileges on an as needed basis. To
+execute a command as the superuser, the desired command is simply preceeded
+with the sudo command. After the command is entered, the user is prompted for
+the user's password rather than the superuser's:
 
     [me@linuxbox me]$ sudo some_command
     Password:
     [me@linuxbox me]$
+
+Note that in this case, `some_command` is executed with elevated permissions,
+but subsequent commands will be executed as `me`. This is reflected in the
+prompt remaining a `$`.
 
 *Note, however, on Cornerstone-owned, shared machines, most of you will NOT
 have the ability to become superuser, as this would defeat the protections
