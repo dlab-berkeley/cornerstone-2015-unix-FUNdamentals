@@ -87,8 +87,8 @@ have learned enough about networks to know when it would be safe, **never** use
 other, unencrypted protocols to connect to other machines.
 
 Typing `exit` or Control-D often terminates the remote shell, and the local
-client program, and returns us to our previous shell. On AIX, however, you need
-to type `logout` (as the OS is happy to tell you!).
+client program, and returns us to our previous shell. On AIX, however, if you
+type Control-D, AIX will ask you to to type `logout`.
 
 ## Copying files to, and from a remote machine using `scp`
 
