@@ -2,7 +2,7 @@
 
 echo "Challenge 1"
 
-if [ `../my_files/script.R`=`R --silent -e "table(read.table('../data/animals.txt'))" ` ] ; then
+if [ `../my_files/script.sh`=`sort ../data/animals.txt | uniq -c` ] ; then
 	echo ...passed
 else
 	echo ...failed
