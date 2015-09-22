@@ -13,25 +13,28 @@ is a lot of overhead that could be spend on computation instead. That's okay
 though - unless you are processing images, a windowed (not Windows) environment
 is not really necessary.
 
-However, this means we need a way to edit files that exists in a terminal,
-using a program like `Vi`. There is good news and bad news about this.
+However, this means we need a way to edit files that exists in a terminal. We
+can use a simple editor like `nano`, though we can be more productive by using
+a powerful program like `vi`. There is good news and bad news about this.
 
 ## The good news
 
 1. Vi is everywhere
 
-    Just about every UNIX system on the planet comes with Vi pre-installed
+    Just about every Unix system on the planet comes with Vi pre-installed. If
+    you keep using Unix, you will end up in a Vi session at some point. You
+    should at least know how to make minor edits and exit cleanly!
 
 2. Vi is customizable
 
     The auto-linting (style and error checking), tab-completion, and syntax
-    highlighting that you love about your favorite IDE all started in Vi
+    highlighting that you love about your favorite IDE all started in Vi.
 
 3. Vi is fast
 
     Your hands never need to leave the keyboard in Vi, and complex tasks like
     cutting three lines of code and moving them to beginning of the last line
-    in the document is **only five** keystrokes
+    in the document is **only five** keystrokes.
 
 ## The bad news
 
@@ -198,6 +201,10 @@ Vi also gives you ways to navigate to specific parts of a document.
 * `1G` moves you to the first line of your document
 * `/dillon` moves you to the first occurrence of 'dillon'
 * `n` moves you to the next 'dillon', and `N` moves you to the previous 'dillon'
+
+*Many of these idioms transfer over to `less`, which is what you'll often find
+yourself in for, e.g., man pages. For example, you can type a number to
+multiply a press of the spacebar, or search with `/`.*
 
 ## Repeating and combining commands
 

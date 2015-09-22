@@ -140,6 +140,19 @@ Value | Displayed | Meaning
 755   | rwxr-xr-x | The directory owner has full access. All others may list the directory, but cannot create files nor delete them. This setting is common for directories that you wish to share with other users.
 700   | rwx------ | The directory owner has full access. Nobody else has any rights.  This setting is useful for directories that only the owner may use and must be kept private from others.
 
+## chmod's other interface
+
+If you check the man(ual) page, you'll see that chmod also supports a more
+symbolic syntax. However, the numeric syntax is a way to expose you to the guts
+of an old system that uses a very numeric approach to implementing this
+information. At the core, *all* information can be encoded numerically! (Well,
+barring some abstract philosophical constraints.)
+
+A particularly useful feature when doing recursive `chmod` is the `+X` option
+(as compared to `+x`). This option sets the executable bit *only* if the file
+is a directory, or if some other executable bit is already set. This would be
+hard to do with numeric permissions!
+
 ## Becoming The Superuser For A Short While
 
 It is often necessary to become the superuser to perform important system
@@ -205,6 +218,7 @@ command is used like this:
 In the example above, we changed the group ownership of some_file from its
 previous group to "new_group". You must be the owner of the file or directory
 to perform a chgrp.
+
 ---
 Adapted from [Linuxcommand.org](http://linuxcommand.org/lc3_lts0090.php)
 

@@ -179,16 +179,13 @@ and sends the output back to our local shell for display.
 
 ### SSH Keys
 
-Typing our password over and over again is annoying,
-especially if the commands we want to run remotely are in a loop.
-To remove the need to do this,
-we can create an [SSH key](./reference.html#ssh-key)
-to tell the remote machine
-that it should always trust us.
+Typing our password over and over again is annoying, especially if the commands
+we want to run remotely are in a loop.  To remove the need to do this, we can
+create an *SSH key* to tell the remote machine that it should always trust us.
 
-SSH keys come in pairs, a public key that gets shared with services like GitHub,
-and a private key that is stored only on your computer. If the keys match,
-you're granted access.
+SSH keys come in pairs, a public key that gets shared with services like
+GitHub, and a private key that is stored only on your computer. If the keys
+match, you're granted access.
 
 The cryptography behind SSH keys ensures that no one can reverse engineer your
 private key from the public one.
@@ -221,8 +218,9 @@ Enter file in which to save the key (/Users/username/.ssh/id_rsa):
 ~~~
 
 You will then be asked to provide an optional passphrase. This can be used to
-make your key even more secure, but if what you want is avoiding type your
-password every time you can skip it by hitting enter twice.
+make your key even more secure (and should always be used when you don't want
+to share your secrets with your system administrators), but if what you want is
+avoiding type your password every time you can skip it by hitting enter twice.
 
 ~~~ {.output}
 Enter passphrase (empty for no passphrase):
@@ -392,8 +390,31 @@ $ ssh vlad@comet "chmod go-r ~/.ssh/authorized_keys ; ls -l ~/.ssh"
 
 > ## Key Points  {.callout}
 > *  SSH is a secure alternative to username/password authorization
-> *  SSH keys are generated in public/private pairs. Your public key can be shared with others. The private keys stays on your machine only.
-> *  The 'ssh' and 'scp' utilities are secure alternatives to logging into, and copying files to/from remote machine
+> *  SSH keys are generated in public/private pairs. Your public key can be
+>    shared with others. The private keys stays on your machine only.
+> *  The 'ssh' and 'scp' utilities are secure alternatives to logging into, and
+>    copying files to/from remote machine
+
+## So what about GUIs?
+
+You might think that when we use a GUI program like SlickEdit that we aren't
+using SSH anymore, but we are! Everything one computer communicates to another
+is just 1's and 0's. In this case, information about the visual display is also
+"tunneled" through the SSH connection. MobaXterm supports these additional forms
+of information to interact with the remote computer. In this case, SlickEdit
+uses the *X Windows* protocol (sometimes called *X11*). SSH is very general,
+and provides a one-stop solution to the secure transfer of data for nearly any
+application or purpose.
+
+Later, we'll also look at SAS Studio as an example of how modern applications
+are indeed bypassing the need for SSH by using web protocols. However, you can
+still be alert to whether data is encrypted properly, by ensuring that a secure
+protocol is used (e.g., `https`). When you're out "in the wild" you should
+always be cautious when you read that a "certificate" is invalid (as happens
+when you log onto the windows server). In the case of cornerstone, you are
+already logged into a secure VPN, so you are already "inside" of a secure
+domain. But when in doubt, don't just click through, and don't be afraid to ask
+for advice from a more experienced "networker!"
 
 ---
 
