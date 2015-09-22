@@ -1,160 +1,116 @@
 ---
-title: Networked Environments
-subtitle: Remote shells
+title: Terminal Access to Networked Environments
+subtitle: (Secure) remote shells
 minutes: 5
 ---
 > ## Learning Objectives  {.objectives}
 >
-> *   Learn what SSH is
-> *   Learn what an SSH key is
-> *   Generate your own SSH key pair
-> *   Learn how to use your SSH key
-> *   Learn how to work remotely using `ssh` and `scp`
-> *   Add your SSH key to an remote server
+> * Learn what SSH is
+> * Learn what an SSH key is
+> * Understand that GUI programs (like MobaXterm) use SSH as their foundation
 
-Let's take a closer look at what happens when we use the shell
-on a desktop or laptop computer.
-The first step is to log in
-so that the operating system knows who we are and what we're allowed to do.
-We do this by typing our username and password;
-the operating system checks those values against its records,
-and if they match,
-runs a shell for us.
+Let's take a closer look at what happens when we use the shell (e.g., Bash) on
+a desktop or laptop computer.  The first step is to log in so that the
+operating system knows who we are and what we're allowed to do.  We do this by
+typing our username and password; the operating system checks those values
+against its records, and if they match, runs a shell for us.
 
-As we type commands,
-the 1's and 0's that represent the characters we're typing are sent from the keyboard to the shell.
-The shell displays those characters on the screen to represent what we type,
-and then,
-if what we typed was a command,
-the shell executes it and displays its output (if any).
+As we type commands, the 1's and 0's that represent the characters we're typing
+are sent from the keyboard to the shell.  The shell displays those characters
+on the screen to represent what we type, and then, if what we typed was a
+command, the shell executes it and displays its output (if any).
 
-What if we want to run some commands on another machine,
-such as the server in the basement that manages our database of experimental results?
-To do this,
-we have to first log in to that machine.
-We call this a [remote login](./reference.html#remote-login).
+What if we want to run some commands on another machine, such as the server in
+the basement that manages our database?  To do this, we have to first log in to
+that machine.  We call this a *remote login*.
 
-In order for us to be able to login, the remote computer must be runing
-a [remote login server](./reference.html#remote-login-server) and we will
-run a client program that can talk to that server.
-The client program passes our login credentials to the remote login server
-and, if we are allowed to login, that server then runs a shell for us on the
-remote computer.
+In order for us to be able to login, the remote computer must be runing a
+*remote login server* and we will run a client program that can talk to that
+server.  The client program passes our login credentials to the remote login
+server and, if we are allowed to login, that server then runs a shell for us on
+the remote computer.
 
-Once our local client is connected to the remote server,
-everything we type into the client is passed on, by the server, to the shell
-running on the remote computer.
-That remote shell runs those commands on our behalf,
-just as a local shell would,
-then sends back output, via the server, to our client, for our computer to display.
+Once our local client is connected to the remote server, everything we type
+into the client is passed on, by the server, to the shell running on the remote
+computer.  That remote shell runs those commands on our behalf, just as a local
+shell would, then sends back output, via the server, to our client, for our
+computer to display.
 
-### SSH History
+*When we are using a full screen remote desktop (or if you happen to be lucky
+enough to be running in a full-screen terminal ;), we tend to forget that we
+are traversing (at least) two computing contexts. When we are running in a
+terminal, however, it becomes critical to keep track of "who" is executing the
+commands you type!*
 
-Back in the day,
-when everyone trusted each other and knew every chip in their computer by its first name,
-people didn't encrypt anything except the most sensitive information when sending it over a network
-and the two programs used for running a shell (usually back then, the Bourne Shell, `sh`) on, or copying
-files to, a remote machine were named `rsh` and `rcp`, respectively. Think (`r`)emote `sh` and `cp`
+## SSH History
 
-However, anyone could watch the unencrypted network traffic, which meant that villains could
-steal usernames and passwords,
-and use them for all manner of nefarious purposes.
+Back in the day, when everyone trusted each other and knew every chip in their
+computer by its first name, people didn't encrypt anything except the most
+sensitive information when sending it over a network and the two programs used
+for running a shell (usually back then, the Bourne Shell, `sh`) on, or copying
+files to, a remote machine were named `rsh` and `rcp`, respectively. Think
+(`r`)emote `sh` and `cp`
 
-The [SSH protocol](./reference.html#ssh-protocol) was invented to prevent this (or at least slow it down).
-It uses several sophisticated, and heavily tested, encryption protocols
-to ensure that outsiders can't see what's in the messages
-going back and forth between different computers.
+However, anyone could watch the unencrypted network traffic, which meant that
+villains could steal usernames and passwords, and use them for all manner of
+nefarious purposes.
 
-The remote login server which accepts connections from client programs is known as the [SSH daemon](./reference.html#ssh-daemon), or `sshd`.
+The *SSH protocol* was invented to prevent this (or at least slow it down).  It
+uses several sophisticated, and heavily tested, encryption protocols to ensure
+that outsiders can't see what's in the messages going back and forth between
+different computers.
 
-The client program we use to login remotely is the [secure shell](./reference.html#secure-shell),
-or `ssh`, think (`s`)ecure `sh`.
+The remote login server which accepts connections from client programs is known
+as the *SSH daemon*, or `sshd`.
 
-The `ssh` login client has a companion program called `scp`, think  (`s`)ecure `cp`,
-which allows us to copy files to or from a remote computer using the same kind of encrypted connection.
+The client program we use to login remotely is the *secure
+shell*, or `ssh`, think (`s`)ecure `sh`.
 
+The `ssh` login client has a companion program called `scp`, think  (`s`)ecure
+`cp`, which allows us to copy files to or from a remote computer using the same
+kind of encrypted connection. Some "FTP" programs also support *SFTP*, which
+gives you an interactive, secure session for browsing and transferring files.
 
-### A remote login using `ssh`
+## A remote login using `ssh`
 
-To make a remote login, we issue the command `ssh username@computer`
-which tries to make a connection to the SSH daemon running on the remote computer we have specified.
+To make a remote login from a terminal session, we issue the command `ssh
+username@computer` which tries to make a connection to the SSH daemon running
+on the remote computer we have specified.
 
-After we log in,
-we can use the remote shell to use the remote computer's files and directories.
+After we log in, we can use the remote shell to use the remote computer's files
+and directories.
 
-Typing `exit` or Control-D
-terminates the remote shell, and the local client program, and returns us to our previous shell.
+*The exact same thing happens when we use a GUI tool to connect.* Many GUI
+tools will provide a range of options to connect to a remote server. You may
+recall that we set up the MobaXterm connection to the AIX server with Until you
+have learned enough about networks to know when it would be safe, **never** use
+other, unencrypted protocols to connect to other machines.
 
-In the example below,
-the remote machine's command prompt is `moon>`
-instead of just `$`.
-To make it clearer which machine is doing what,
-we'll indent the commands sent to the remote machine
-and their output.
+Typing `exit` or Control-D often terminates the remote shell, and the local
+client program, and returns us to our previous shell. On AIX, however, you need
+to type `logout` (as the OS is happy to tell you!).
 
-~~~ {.input}
-$ pwd
-~~~
-~~~ {.output}
-/users/vlad
-~~~
+## Copying files to, and from a remote machine using `scp`
 
-~~~ {.input}
-$ ssh vlad@moon.euphoric.edu
-Password: ********
-~~~
-~~~ {.input}
-    moon> hostname
-~~~
-~~~ {.output}
-    moon
-~~~
-~~~ {.input}
-    moon> pwd
-~~~
-~~~ {.output}
-    /home/vlad
-~~~
-~~~ {.input}
-    moon> ls -F
-~~~
-~~~ {.output}
-    bin/     cheese.txt   dark_side/   rocks.cfg
-~~~
-~~~ {.input}
-    moon> exit
-~~~
-~~~ {.input}
-$ pwd
-~~~
-~~~ {.output}
-/users/vlad
-~~~
-
-
-### Copying files to, and from a remote machine using `scp`
-
-To copy a file,
-we specify the source and destination paths,
-either of which may include computer names.
-If we leave out a computer name,
-`scp` assumes we mean the machine we're running on.
-For example,
-this command copies our latest results to the backup server in the basement,
-printing out its progress as it does so:
+To copy a file with `cp` *or* `scp`, we specify the source and destination
+paths. With `scp`, paths may include computer names.  If we leave out a
+computer name, `scp` assumes we mean the machine we're running on.  For
+example, this command copies our latest results to the backup server in the
+basement, printing out its progress as it does so:
 
 ~~~ {.input}
 $ scp results.dat vlad@backupserver:backups/results-2011-11-11.dat
 Password: ********
 ~~~
+
 ~~~ {.output}
 results.dat              100%  9  1.0 MB/s 00:00
 ~~~
 
 Note the colon `:`, seperating the hostname of the server and the pathname of
-the file we are copying to.
-It is this character that informs `scp` that the source or target of the copy is
-on the remote machine and the reason it is needed can be explained as follows:
+the file we are copying to.  It is this character that informs `scp` that the
+source or target of the copy is on the remote machine and the reason it is
+needed can be explained as follows:
 
 In the same way that the default directory into which we are placed when running
 a shell on a remote machine is our home directory on that machine, the default
@@ -166,24 +122,25 @@ This means that
 $ scp results.dat vlad@backupserver:
 ~~~
 
-would copy `results.dat` into our home directory on `backupserver`, however, if we did not
-have the colon to inform `scp` of the remote machine, we would still have a valid commmad
+would copy `results.dat` into our home directory on `backupserver`, however, if
+we did not have the colon to inform `scp` of the remote machine, we would still
+have a valid commmad
 
 ~~~ {.input}
 $ scp results.dat vlad@backupserver
 ~~~
 
-but now we have merely created a file called `vlad@backupserver` on our local machine,
-as we would have done with `cp`.
+but now we have merely created a file called `vlad@backupserver` on our local
+machine, as we would have done with `cp`.
 
 ~~~ {.input}
 $ cp results.dat vlad@backupserver
 ~~~
 
-Copying a whole directory betwen remote machines uses the same syntax as the `cp` command:
-we just use the `-r` option to signal that we want copying to be recursively.
-For example,
-this command copies all of our results from the backup server to our laptop:
+Copying a whole directory between remote machines uses the same syntax as the
+`cp` command: we just use the `-r` option to signal that we want copying to be
+recursively.  For example, this command copies all of our results from the
+backup server to our laptop:
 
 ~~~ {.input}
 $ scp -r vlad@backupserver:backups ./backups
